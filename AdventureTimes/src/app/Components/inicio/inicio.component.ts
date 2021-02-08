@@ -13,13 +13,10 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(): void {
     var hola;
-<<<<<<< HEAD
     if (hola) {
       PaymentAddress;
     }
-=======
     var patata;
->>>>>>> 16696c41eb895d42498e40d51e8b29509e80d85f
   }
 
 }

@@ -7,16 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  nombre: string;
-  patata: string;
   constructor() { }
 
   ngOnInit(): void {
-    var hola;
-    if (hola) {
-      PaymentAddress;
-    }
-    var patata;
+   
   }
 
 }

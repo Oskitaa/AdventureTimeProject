@@ -1,15 +1,85 @@
-#titulo {
-    background-image: url("../../../assets/images/5c80f70f72f5d9028c17ed26.png");
-    width: 1069px;
-    height: 519px;
-    display:block;
-    margin: auto;
+* {
+    margin: 0;
+    padding: 0;
 }
-    
 
-#fondo {
+.titulo img{
+    width: 50%;
+    height: 25%;
+    display: block;
+    margin: auto;
+}  
+
+.fondo{
+    width: 100vw;
+    height: 100vh;
     background-image: url("../../../assets/images/wallpaperflare.com_wallpaper.jpg");
-    width: 1920px;
-    height: 1080px;
+    background-size: cover;
+    background-position: center;
 }
-    
+
+//BMO
+.bmo {
+    width: 12%;
+    height: 23%;
+    position: absolute;
+    left: 87%;
+    top: 55%;
+  }
+
+.bmo img {
+    width: 100%;
+    height: auto;
+}
+
+@supports(object-fit: cover){
+    .bmo img{
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+}
+
+//JAKE
+.jake {
+    width: 20%;
+    height: 35%;
+    position: absolute;
+    left: 7%;
+    top: 60%;
+  }
+
+.jake img {
+    width: 100%;
+    height: auto;
+}
+
+@supports(object-fit: cover){
+    .jake img{
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+}
+
+//FINN
+.finn {
+    width: 15%;
+    height: 30%;
+    position: absolute;
+    left: 58%;
+    top: 70%;
+  }
+
+.finn img {
+    width: 100%;
+    height: auto;
+}
+
+@supports(object-fit: cover){
+    .finn img{
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+}

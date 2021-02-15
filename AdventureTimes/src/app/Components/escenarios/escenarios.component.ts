@@ -37,5 +37,9 @@ export class EscenariosComponent implements OnInit {
       }
       this.paused = !this.paused;
     }
+
+    scrollToElement(target: HTMLElement) {
+      target.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'start'})
+    }
   }
 

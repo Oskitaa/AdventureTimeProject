@@ -39,7 +39,7 @@ export class EscenariosComponent implements OnInit {
     }
 
     scrollToElement(target: HTMLElement) {
-      target.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'start'})
+      target.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'start'})
     }
   }
 

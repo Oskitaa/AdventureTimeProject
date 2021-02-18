@@ -2,6 +2,7 @@
   "name": "adventure-times",
   "version": "0.0.0",
   "scripts": {
+    "serveo": "ng serve -o",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",

@@ -9,6 +9,10 @@ export class InfoEscenariosComponent implements OnInit {
   
   constructor() { }
 
+  refreshAOS(event){
+    console.log(event);
+    AOS.refresh();
+  }
   ngOnInit(): void {
     AOS.init();
   }

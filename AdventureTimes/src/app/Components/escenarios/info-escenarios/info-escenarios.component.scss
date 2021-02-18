@@ -9,6 +9,14 @@ section {
         border: solid 2px black;
         border-radius: 15px;   
     }
+    article{
+        aside{
+            float: right;
+            div.card{
+                border-radius: 1rem;
+            }
+        }
+    }
 }
 
 

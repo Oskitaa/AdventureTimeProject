@@ -1,0 +1,23 @@
+#banner {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100vw;
+    height: 30vh;
+    background-image: url("https://cdn.shopify.com/s/files/1/0281/5446/2242/files/Adventure_Time-Banner_1024x1024.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+nav {
+    top: 0;
+    position: sticky;
+    z-index: 1;
+
+    #inicio {
+        font-size: 1.25em;
+    }
+
+    ul {
+        margin-right: auto;
+    }
+}

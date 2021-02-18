@@ -1,0 +1,14 @@
+#tarjetas {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .tarjeta {
+        margin: 2em;
+    }
+}
+div {
+    border: 2px solid royalblue;
+    height: 5em;
+    margin: 2em;
+}

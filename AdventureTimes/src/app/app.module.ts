@@ -8,6 +8,9 @@ import { PersonajesComponent } from './Components/personajes/personajes.componen
 import { EpisodiosComponent } from './Components/episodios/episodios.component';
 import { EscenariosComponent } from './Components/escenarios/escenarios.component';
 import { TiendaComponent } from './Components/tienda/tienda.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TarjetaTiendaComponent } from './Components/tienda/tarjeta-tienda/tarjeta-tienda.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,14 @@ import { TiendaComponent } from './Components/tienda/tienda.component';
     PersonajesComponent,
     EpisodiosComponent,
     EscenariosComponent,
-    TiendaComponent
+    TiendaComponent,
+    TarjetaTiendaComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

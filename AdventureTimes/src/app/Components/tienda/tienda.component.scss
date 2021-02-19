@@ -6,6 +6,21 @@
     .tarjeta {
         margin: 2em;
     }
+
+    .tarjeta:hover {
+        animation-name: movimiento-tarjeta;
+        animation-duration: 2s;
+    }
+
+    @keyframes movimiento-tarjeta {
+        40% {
+            transform: scale(-1, 1);
+            background-color: black;
+        }
+        75% {
+            transform: scale(1, 1);
+        }
+    }
 }
 div {
     border: 2px solid royalblue;

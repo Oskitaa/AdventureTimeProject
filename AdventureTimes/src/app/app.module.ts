@@ -8,6 +8,11 @@ import { PersonajesComponent } from './Components/personajes/personajes.componen
 import { EpisodiosComponent } from './Components/episodios/episodios.component';
 import { EscenariosComponent } from './Components/escenarios/escenarios.component';
 import { TiendaComponent } from './Components/tienda/tienda.component';
+import { HttpClientModule } from "@angular/common/http";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+import { EpisodeDetailsComponent } from './Components/episode-details/episode-details.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +21,16 @@ import { TiendaComponent } from './Components/tienda/tienda.component';
     PersonajesComponent,
     EpisodiosComponent,
     EscenariosComponent,
-    TiendaComponent
+    TiendaComponent,
+    EpisodeDetailsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    NgbModule,
+    NgbPaginationModule, 
+    NgbAlertModule
   ],
   providers: [],
   bootstrap: [AppComponent]

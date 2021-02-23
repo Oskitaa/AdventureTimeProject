@@ -30,7 +30,7 @@ import { EpisodeDetailsComponent } from './Components/episode-details/episode-de
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
     NgbModule,
     NgbPaginationModule, 
     NgbAlertModule

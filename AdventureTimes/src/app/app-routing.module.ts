@@ -31,7 +31,7 @@ const routes: Routes = [
     path: "seasons/:idSeason/episode/:idEpisode",
     component: EpisodeDetailsComponent
   }
-
+]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

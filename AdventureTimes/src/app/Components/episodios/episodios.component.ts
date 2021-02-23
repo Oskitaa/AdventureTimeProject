@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class EpisodiosComponent implements OnInit {
 
-  public seasons;
+  public seasons ;
   public urlimg = environment.urlImg;
 
   constructor(private peti : PajaxService) { }

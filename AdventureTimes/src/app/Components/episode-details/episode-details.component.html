@@ -1,0 +1,14 @@
+<div class="center center-block ">
+    <div class="dialog">
+        <div class="episode" *ngFor="let item of episodes.episodes">
+                <span class="col-md-3 episode_number routerLink">{{item.episode_number}}</span>
+                
+                <img src="{{urlimg}}{{item.still_path}}" alt="Portada de la temporada" width="200px" height="300px" class="col-md-3" routerLink="/seasons/{{item.season_number}}">
+
+                <div class="container col-md-6">
+                    <h3 class="col-md-6 episode_name" routerLink="/seasons/{{item.season_number}}/">{{item.name}}</h3>    
+                    <span class="col-md-6 episode_overview">{{item.overview}}</span>
+                </div>
+        </div>
+    </div>
+</div>

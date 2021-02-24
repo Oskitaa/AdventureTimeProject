@@ -8,12 +8,15 @@ img {
 }
 
 
-.titulo img{
+.titulo {
+  img {
     width: 50%;
     height: 25%;
     display: block;
     margin: auto;
-}  
+  }  
+}
+
 
 .fondo{
     width: 100vw;
@@ -32,18 +35,22 @@ img {
     top: 55%;
   }
 
-.bmo img {
+.bmo {
+  img {
     width: 100%;
     height: auto;
     cursor: pointer;
+  }
 }
 
 @supports(object-fit: cover){
-    .bmo img{
+  .bmo {
+      img {
       height: 100%;
       object-fit: cover;
       object-position: center center;
     }
+  } 
 }
 
 //JAKE
@@ -55,18 +62,22 @@ img {
     top: 60%;
   }
 
-.jake img {
+.jake { 
+  img {
     width: 100%;
     height: auto;
     cursor: pointer;
+  }
 }
 
 @supports(object-fit: cover){
-    .jake img{
+  .jake {
+    img {
       height: 100%;
       object-fit: cover;
       object-position: center center;
     }
+  }
 }
 
 //FINN
@@ -78,16 +89,58 @@ img {
     top: 70%;
   }
 
-.finn img {
+.finn {
+  img {
     width: 100%;
     height: auto;
     cursor: pointer;
+  } 
 }
 
 @supports(object-fit: cover){
-    .finn img{
+  .finn {
+    img{
       height: 100%;
       object-fit: cover;
       object-position: center center;
     }
+  }   
+}
+
+//REY HIELO
+.hielo {
+  width: 8%;
+  height: 15%;
+  position: absolute;
+  left: 34%;
+  top: 65%;
+  transition: all 2s;
+  transition-timing: ease-in-out;
+}
+
+.hielo:hover {
+  width: 8%;
+  height: 15%;
+  position: absolute;
+  left: 34%;
+  top: 65%;
+  transform: translateX(-200px) translateY(-200px) rotate(360deg) translate3d(60px, 50%, 3em) scale3d(0.0, 0.0, 0.0);
+}
+
+.hielo { 
+  img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+  }
+}
+
+@supports(object-fit: cover){
+.hielo {
+    img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
 }

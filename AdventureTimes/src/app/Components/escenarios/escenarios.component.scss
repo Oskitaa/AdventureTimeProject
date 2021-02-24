@@ -3,18 +3,82 @@
     scroll-snap-type: y mandatory;
     overflow: hidden;
 }
-.contenido {
-    margin: 0;
-    padding: 0;
-    height: auto;
-    img {
-        height: 100vh;
-        width: 100vw;
-    }
-    
+div.animationCircle{
+    position: absolute;
+    opacity: 0;
+    border-radius: 50%;
+    background-color: white;
+    width: 40px;
+    height: 40px;
 }
+section{
+        article{
+            width: 25vw;
+            height: 100vh;
+            transition: 1s;
+            white-space: nowrap;
+            overflow-x: hidden;
+            &:hover{
+                width: 100vw;
+            }
+            &:hover div.content h1{
+                display: block;
+                opacity: 1;
+            }
+            &:hover div.content a {
+                display: block;
+                opacity: 1;
+            }
+            div.content{
+                padding: 2em;
+                h1{
+                    color: white;
+                    display: none;
+                    opacity: 0;
+                }
+                a{
+                    color: white;
+                    display:none;
+                    opacity: 0;
+                }
+                
+            }
+        }
+        #reinoFuego{
+            background: url("/assets/imgs/reino_fuego/reino_fuego_intro.png");
+        }
+        #reinoChuche{
+            background: url('/assets/imgs/reino_chuche/reino_chuche_presentacion.jpg') no-repeat;
+            background-size: cover;
+        }
+        #reinoGrumoso{
+            background: url('/assets/imgs/intro.jpg') no-repeat right;
+            background-size: cover;
+        }
+        #reinoHielo{
+            background: url('/assets/imgs/reino_helado.jpg') no-repeat;
+            background-size: cover;
+            div.content{
+                h1{
+                    color: #0e153a;
+                }
+                a{
+                    color: #0e153a;
+                }
+            }
+        }
+}
+@media screen and(max-width: 600px){
+    section{
+        flex-direction: column-reverse;
+        article{
+            width: 100vw; 
+            height: 25vh;
+            &:hover{
+                height: 100vh;
+            }
 
-.test{
-    position: -webkit-sticky;
-    position: sticky;
+        }
+    }
+
 }

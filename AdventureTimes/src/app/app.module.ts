@@ -8,8 +8,12 @@ import { PersonajesComponent } from './Components/personajes/personajes.componen
 import { EpisodiosComponent } from './Components/episodios/episodios.component';
 import { EscenariosComponent } from './Components/escenarios/escenarios.component';
 import { TiendaComponent } from './Components/tienda/tienda.component';
-import { InfoEscenariosComponent } from './Components/escenarios/info-escenarios/info-escenarios.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EspacioGrumosoComponent } from './Components/escenarios/espacio-grumoso/espacio-grumoso.component';
+import { ReinoHieloComponent } from './Components/escenarios/reino-hielo/reino-hielo.component';
+import { ReinoFuegoComponent } from './Components/escenarios/reino-fuego/reino-fuego.component';
+import { ReinoChucheComponent } from './Components/escenarios/reino-chuche/reino-chuche.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +23,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     EpisodiosComponent,
     EscenariosComponent,
     TiendaComponent,
-    InfoEscenariosComponent,
+    EspacioGrumosoComponent,
+    ReinoHieloComponent,
+    ReinoFuegoComponent,
+    ReinoChucheComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

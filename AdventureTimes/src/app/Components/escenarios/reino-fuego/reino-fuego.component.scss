@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+section {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    height: 100vh;
+    padding: 2em;
+    height: 100vh;
+    padding: 1.5em;
+    color: white;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    article{
+        width: 600px;
+        height: auto;
+        border-radius: 1rem;
+    }
+}
+
+#intro{
+    background: url("/assets/imgs/reino_fuego/reino_fuego_intro.png");
+    background-size: cover;
+}
+
+#sectionUbicacion{
+    background: url('/assets/imgs/reino_fuego/reino_fuego_ubicacion.png') no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    justify-content: space-around;
+    align-items: center;
+    article{
+        width: 90%;
+        div{
+            div.images{
+                justify-content: center;
+                img{
+                    width: 300px;
+                    height: 250px;
+                }
+            }
+        }
+        div.info_geo_1{
+            align-self: flex-start;
+        }
+        div.banner_apariencia{
+            img{
+                width: 350px;
+                height: 150px;
+            }
+        }
+    }
+}
+#sectionHabitantes{
+    background: url('/assets/imgs/reino_fuego/reino_fuego_habitantes.png') no-repeat right center;
+    background-size: cover;
+    article{
+        div{
+            ul{
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                justify-content: center;
+                li{
+                    cursor: pointer;
+                    margin-block: 10px;
+                    width: fit-content;
+                    padding: 5px 20px 5px 20px;
+                    background-color: #a80038;
+                    border-radius: 10px;
+                    border: 1px solid #fd0054;
+
+                }
+                li:hover{
+                    background:darken($color: #fc5c9c, $amount: 10)
+                }
+            }
+            
+        }
+        div.cards-container{
+            color: black;
+            img{
+                margin: auto;
+                width: fit-content;
+                height: 300px;
+            }
+        }
+    }
+}
+#sectionGaleria{
+    background: url('/assets/imgs/curiosidades.jpg') no-repeat;
+    
+}
+@media screen and(max-width: 600px){
+    section{
+        height: 100vmax;
+    }
+    #sectionHabitantes{
+        height: auto;
+        article{
+            div{
+                ul{
+                    li{
+                        margin: auto;
+                        margin-block-end: 10px;
+                    }
+                }
+                
+            }
+            div.cards-container{
+                div.card{
+                }
+                img{
+                    margin: auto;
+                    width: 200px;
+                    height: 300px;
+                }
+            }
+        }
+    }
+}

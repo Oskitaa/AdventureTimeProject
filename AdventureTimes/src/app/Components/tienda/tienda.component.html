@@ -1,7 +1,12 @@
 <app-navbar></app-navbar>
 <section id="tarjetas">
-    <app-tarjeta-tienda class="tarjeta"></app-tarjeta-tienda>
-    <app-tarjeta-tienda class="tarjeta"></app-tarjeta-tienda>
-    <app-tarjeta-tienda class="tarjeta"></app-tarjeta-tienda>
-    <app-tarjeta-tienda class="tarjeta"></app-tarjeta-tienda>
+    <app-tarjeta-tienda class="tarjeta" [title]="t1" [desc]="d1" [img]="img1" (activaCompra)="pow(t1)"></app-tarjeta-tienda>
+    <app-tarjeta-tienda class="tarjeta" [title]="t1" [desc]="d1" [img]="img1" (activaCompra)="compraRealizada=!compraRealizada"></app-tarjeta-tienda>
+    <app-tarjeta-tienda class="tarjeta" [title]="t1" [desc]="d1" [img]="img1" (activaCompra)="compraRealizada=!compraRealizada"></app-tarjeta-tienda>
+    <app-tarjeta-tienda class="tarjeta" [title]="t1" [desc]="d1" [img]="img1" (activaCompra)="compraRealizada=!compraRealizada"></app-tarjeta-tienda>
+</section>
+<section>
+    <div id="scb" *ngIf="compraRealizada">
+        <p>Compra de {{ seleccionado }} realizada con éxito.</p>
+    </div>
 </section>

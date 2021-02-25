@@ -11,12 +11,7 @@ const routes: Routes = [
   {
     path: "seasons/:id",
     component: EpisodeDetailsComponent
-  },
-  {
-    path: "seasons/:idSeason/episode/:idEpisode",
-    component: EpisodeDetailsComponent
   }
-
 ];
 
 @NgModule({

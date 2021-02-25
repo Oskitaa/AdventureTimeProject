@@ -1,8 +1,49 @@
-h3{
-    margin: 10px;
+body {
+  margin-top: -10px;
+  background: url("/assets/images/paj.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  text-align: center;
 }
 
+h3 {
+  margin: 10px;
+}
 
-.routerLink{
-    cursor:pointer;    
+.container {
+  position: static;
+
+  &:last-child {
+    padding-bottom: 5px;
+  }
+}
+
+.routerLink {
+  cursor: pointer;
+}
+
+img {
+  width: 250px;
+  height: 350px;
+  margin: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  h3 {
+    text-align: left;
+  }
+
+  img {
+    width: 350px;
+    height: 400px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  img {
+    max-width: 350px;
+    height: 350px;
+  }
 }

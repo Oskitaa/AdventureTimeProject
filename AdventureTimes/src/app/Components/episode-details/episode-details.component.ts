@@ -1,32 +1,43 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
 import { PajaxService } from 'src/app/Servicio/pajax.service';
 import { environment } from 'src/environments/environment';
+
+import { gsap } from "gsap";
+import { ScrollTrigger,TimelineMax } from "gsap/all";
 
 @Component({
   selector: 'app-episode-details',
   templateUrl: './episode-details.component.html',
   styleUrls: ['./episode-details.component.scss']
 })
-export class EpisodeDetailsComponent implements OnInit {
+export class EpisodeDetailsComponent{
 
-  private idSeason : number;
+  @Input() idSeason : number;
   public episodes;
   public urlimg = environment.urlImg;
+  public ancho = window.innerWidth;
 
-  constructor(private peti : PajaxService, private param : ActivatedRoute) { 
-    this.idSeason = this.param.snapshot.params.id;
+  constructor(private peti : PajaxService) { 
     this.episodes = {};
   }
 
-  ngOnInit(): void {
+  ngOnChanges() : void{
     this.peti.getEpidodesSeasons(this.idSeason).subscribe(d => {
-      console.log(d);
       this.episodes = d;
-    }
-    
-    )
-    
+    })
   }
 
+  ngOnInit() : void {
+    let time = new TimelineMax();
+    setTimeout(() => {
+      var sections : any = gsap.utils.toArray('.episode');
+
+      sections.forEach((section) =>{
+        time.to(<any>section,{
+          transform:"scale(1)"
+        }).duration(2)
+      })  
+    }, 100);
+
+  }
 }

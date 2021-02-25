@@ -9,7 +9,7 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
   styleUrls: ['./espacio-grumoso.component.scss']
 })
 export class EspacioGrumosoComponent implements OnInit {
-  images;
+  images: string[];
   paused = false;
   unpauseOnArrow = false;
   pauseOnIndicator = false;
@@ -31,14 +31,6 @@ export class EspacioGrumosoComponent implements OnInit {
     gsap.delayedCall(1, () => ScrollTrigger.refresh());
   }
   ngAfterViewInit(){
-    // gsap.to("#sectionGeografia article",{
-    //   scrollTrigger: {
-    //     trigger: "#sectionGeografia article.row",
-    //     toggleActions: "restart none restart none",
-    //     markers: true,
-    //   },
-    //   opacity: 1
-    // }).duration(1)
     //Animacion de la seccion intro del componente
     let introTimeLine = new TimelineMax({
       scrollTrigger: {
@@ -60,16 +52,84 @@ export class EspacioGrumosoComponent implements OnInit {
     },{
       transform: "scale(1)"
     })
+    this.sectionGeografiaAnimations();
+    this.sectionCulturaAnimation();
+    this.sectionGaleriaAnimation();
+  }
+  
+  sectionGaleriaAnimation(){
+    let galeriaTimeLine = new TimelineMax({
+      scrollTrigger: {
+        trigger: "#sectionGaleria article",
+        toggleActions: "restart none restart pause",
+        start: "top bottom",
+      }
+    })
+    galeriaTimeLine.fromTo("#sectionGaleria article h1",1,{
+      opacity: 0,
+      transform: "scaleX(0)"
+    },{
+      opacity: 1,
+      transform: "scaleX(1)",
+    }).fromTo("#sectionGaleria article #carousel",1,{
+      opacity: 0,
+      transform: "scaleY(0)",
+    },{
+      opacity: 1,
+      transform: "scaleY(1)"
+    })
+  }
+  sectionCulturaAnimation(){
+    let culturaTimeLine = new TimelineMax({
+      scrollTrigger: {
+        trigger: "#sectionCultura article",
+        toggleActions: "restart none restart pause",
+        start: "top bottom",
+      }
+    })
+    let culturaTimeLine_1 = new TimelineMax({
+      scrollTrigger: {
+        trigger: "#sectionCultura article",
+        toggleActions: "restart none restart pause",
+        start: "top bottom",
+        markers:true
+      }
+    })
+    culturaTimeLine.fromTo("#sectionCultura article h2",1,{
+      y: -100,
+    },{
+      y: 0
+    }).fromTo("#sectionCultura article img",1,{
+      borderRadius: "100%",
+      transform: "scale(0)"
+    },{
+      transform: "scale(1)",
+      borderRadius: "0"
+    })
+    culturaTimeLine_1.fromTo("#sectionCultura article p.enterRight",1,{
+      ease: "power3.inOut",
+      x: 300
+    },{
+      ease: "power3.inOut",
+      x: 0
+    }).fromTo("#sectionCultura article p.enterLeft",1,{
+      opacity: 0,
+      x: -300
+    },{
+      opacity: 1,
+      x: 0
+    })
+  }
+  sectionGeografiaAnimations(){
     let geografiaTimeLine_1 = new TimelineMax({
       scrollTrigger: {
         trigger: "#sectionGeografia article",
         toggleActions: "restart none restart pause",
         start: "top bottom",
-        markers: true,
       }
     });
-    //Animacion para el titulo primer paragro y imagenes de la seccion Geografia
-    geografiaTimeLine_1.fromTo("#sectionGeografia article div h2",.75,{
+     //Animacion para el titulo primer paragrafo y imagenes de la seccion Geografia
+     geografiaTimeLine_1.fromTo("#sectionGeografia article div h2",.75,{
       opacity: 0,
       x: -100
     },{
@@ -92,18 +152,15 @@ export class EspacioGrumosoComponent implements OnInit {
       scrollTrigger: {
         trigger: "#sectionGeografia article",
         toggleActions: "restart none restart none",
-        start: "top center"
+        start: "top center",
       }
     });
     geografiaTimeLine_2.fromTo("#sectionGeografia article div.second p",1.25,{
+      opacity: 0,
       transform: "scale(0)"
     },{
+      opacity: 1,
       transform: "scale(1)"
     })
-  }
-
-  ngAfterContentInit(){
-  }
-  ngOnDestroy(){
   }
 }

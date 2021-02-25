@@ -2,7 +2,7 @@ import { trigger, animate, transition, style, query, group, animateChild } from 
 
 export const circularMaskAnimation =
   trigger('routeAnimations', [
-    transition('HomePage <=> AboutPage', [
+    transition('* => HomePage', [
       style({ position: 'relative' }),
       query(':enter, :leave', [
         style({

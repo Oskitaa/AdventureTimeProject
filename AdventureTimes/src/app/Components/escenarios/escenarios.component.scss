@@ -50,22 +50,17 @@ section{
         #reinoChuche{
             background: url('/assets/imgs/reino_chuche/reino_chuche_presentacion.jpg') no-repeat;
             background-size: cover;
+            text-shadow: 1px 1px 8px black;
+
         }
         #reinoGrumoso{
-            background: url('/assets/imgs/intro.jpg') no-repeat right;
+            background: url('/assets/imgs/espacio_grumoso/intro.jpg') no-repeat right;
             background-size: cover;
         }
         #reinoHielo{
-            background: url('/assets/imgs/reino_helado.jpg') no-repeat;
+            background: url('/assets/imgs/reino_hielo/reino_helado.jpg') no-repeat;
             background-size: cover;
-            div.content{
-                h1{
-                    color: #0e153a;
-                }
-                a{
-                    color: #0e153a;
-                }
-            }
+            text-shadow: 1px 1px 8px black;
         }
 }
 @media screen and(max-width: 600px){

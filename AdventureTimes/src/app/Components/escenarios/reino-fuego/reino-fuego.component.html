@@ -37,10 +37,9 @@
    
 </section>
 <section id="sectionHabitantes" class="justify-content-center">
-    <article class="col-lg-8">
-        <div class="row d-flex">
-            <div class="col-lg-4">
-                <h1 style="text-align: center;">Habitantes</h1>
+    <article class="row align-items-center justify-content-end">
+        <div class="col-sm-12 col-md-12 col-xl-6 mb-5 habitantes" style="text-align: center;">
+            <h1 style="text-align: center;">Habitantes</h1>
                 <ul>
                     <li (click)="changeCard(1)">Princesa Llama</li>
                     <li (click)="changeCard(2)">Rey Llama</li>
@@ -52,26 +51,31 @@
                     <li (click)="changeCard(8)">Juglar Llama</li>
                 </ul>
             </div>
-            <div class="cards-container ml-5 col-lg-4">
-                <div *ngFor="let habitante of habitantes">
-                    <div class="card" *ngIf="habitante.id == this.habitanteSelected">
-                        <img src="{{habitante.image}}" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <h3 class="card-title">
-                                {{habitante.title}}
-                            </h3>
-                            {{habitante.descripcion}}
-                        </div>
+            <div class="cards col-sm-12 col-md-5 col-xl-4">
+                <div class="card" id="card_{{habitante.id}}" *ngFor="let habitante of habitantes" #card>
+                    <img src="{{habitante.image}}" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            {{habitante.title}}
+                        </h3>
+                        {{habitante.descripcion}}
                     </div>
                 </div>
             </div>
-                
-        </div>
     </article>
 
 </section>
 <section id="sectionGaleria">
     <article>
-        <h1>Galeria</h1>
+        <article>
+            <h1 style="text-align: center;">Galeria</h1>
+            <ngb-carousel #carousel [interval]="2000" id="carousel">
+                <ng-template ngbSlide *ngFor="let img of galleryImages; index as i">
+                    <div id="imgGaleriaContainer" class="picsum-img-wrapper">
+                      <img [src]="img" style="width: 100%; height: 100%;" alt="My image {{i + 1}} description">
+                    </div>
+                </ng-template>
+              </ngb-carousel>
+        </article>
     </article>
 </section>

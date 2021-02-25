@@ -11,6 +11,7 @@ section {
     display: flex;
     justify-content: left;
     align-items: center;
+    text-shadow: 1px 1px black;
     article{
         width: 600px;
         height: auto;
@@ -19,12 +20,13 @@ section {
 }
 
 #intro{
-    background: url('/assets/imgs/reino_hielo_intro.jpg') no-repeat;
+    background: url('/assets/imgs/reino_hielo/reino_hielo_intro.jpg') no-repeat;
     background-size: cover;
 }
 
 #sectionUbicacion{
-    background: url('/assets/imgs/reino_helado_ubicacion.png') no-repeat;
+    background: url('/assets/imgs/reino_hielo/curiosidades.jpg') no-repeat;
+
     background-size: cover;
     background-attachment: scroll;
     justify-content: space-around;
@@ -52,31 +54,46 @@ section {
     }
 }
 #sectionCuriosidades{
-    background: url('/assets/imgs/reino_helado_curiosidades.jpg') no-repeat center;
+    background: url('/assets/imgs/reino_hielo/reino_helado_curiosidades.jpg') no-repeat center;
 }
-#sectionGaleria{
-    background: url('/assets/imgs/curiosidades.jpg') no-repeat;
-    article{
 
+#sectionGaleria{
+    background: url('/assets/imgs/reino_hielo/reino_helado_ubicacion.png') no-repeat;
+    justify-content: center;
+    align-items: flex-start;
+    article{
+        height: 50vh;
+        width: 50vw;
     }
-    
 }
 @media screen and(max-width: 600px){
     section{
         height: 100vmax;
     }
-    #sectionGeografia{
-        height: auto;
+    #sectionUbicacion{
+        
         article{
             width: auto;
-            div{
-                div.images{
-                    img{
-                        width: 300px;
-                        height: 150px;
-                    }
+            h2{
+                text-align: center;
+            }
+            .images{
+                justify-content: center;
+                img{
+                    width: 250px !important;
+                    height: 100px !important;
                 }
             }
+            img.banner_apariencia{
+                width: 350px !important;
+                height: 100px !important;
+            }
+        }
+    }
+    #sectionGaleria{
+        align-items: center;
+        article{
+            width: 80vw;
         }
     }
 }

@@ -21,8 +21,8 @@
                 abismo del Espacio Grumoso, por esa razón sus habitantes utilizan coches para volar entre las nubes.
             </p>
             <div class="images mt-4 mb-4 row">
-                <img src="/assets/imgs/geo_grumoso_1.jpg" class="geo_1 col-5" alt="">
-                <img src="/assets/imgs/geo_grumoso_2.png" class="geo_1 col-5" alt="">
+                <img src="/assets/imgs/espacio_grumoso/geo_grumoso_1.jpg" class="geo_1 col-5" alt="">
+                <img src="/assets/imgs/espacio_grumoso/geo_grumoso_2.png" class="geo_1 col-5" alt="">
             </div>
         </div>
        <div class="d-flex flex-column col-sm-12 col-lg-5 justify-content-end second">
@@ -47,21 +47,21 @@
 <section id="sectionCultura" class="justify-content-center">
     <article>
         <h2>Cultura</h2>
-        <p>
+        <p class="enterRight">
             A los residentes en general no les agradan los extranjeros (denominados por ellos como no-grumosos) y tampoco
             les gusta que entren al Espacio Grumoso, como dicen la rana y el papá de la Princesa Grumosa.
         </p>
         <img src="/assets/imgs/espacio_grumoso/gallery/image_4.png" class="mb-3 mt-3"  alt="">
-        <p> 
+        <p class="enterLeft"> 
             En el Espacio Grumoso se lleva una vida bastante cotidiana, incluso la familia real parece ser una familia
             normal que vive en una casa normal en vez de un castillo, parece haber muchos adolescentes y cada uno tiene
             sus amoríos y su personalidad, incluyendo a la Princesa Grumosa.
         </p>
-        <p>
+        <p class="enterRight">
             También se acostumbra a realizar un "Gran Baile Semanal" que parece ser muy importante para las personas del
             Espacio Grumoso.
         </p>
-        <p>
+        <p class="enterLeft">
             Si alguien grumoso se casa en el espacio grumoso, tendrá que ser fusionado con su pareja (según el
             formspring de Pendlenton Ward).
         </p>
@@ -70,7 +70,7 @@
 <section id="sectionGaleria">
     <article>
         <h1 style="text-align: center;">Galeria</h1>
-        <ngb-carousel #carousel [interval]="2000">
+        <ngb-carousel #carousel [interval]="2000" id="carousel">
             <ng-template ngbSlide *ngFor="let img of images; index as i">
                 <div id="imgGaleriaContainer" class="picsum-img-wrapper">
                   <img [src]="img" style="width: 100%; height: 100%;" alt="My image {{i + 1}} description">

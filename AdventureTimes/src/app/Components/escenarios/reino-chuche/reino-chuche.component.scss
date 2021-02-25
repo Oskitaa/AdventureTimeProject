@@ -11,6 +11,7 @@ section {
     display: flex;
     justify-content: left;
     align-items: center;
+    text-shadow: 1px 1px 8px black;
     article{
         width: 600px;
         height: auto;
@@ -19,7 +20,7 @@ section {
 }
 
 #intro{
-    background: url('/assets/imgs/reino_chuche/reino_chuche_intro.gif') no-repeat;
+    background: url('/assets/imgs/reino_chuche/reino_chuche_presentacion.jpg') no-repeat;
     background-size: cover;
 }
 
@@ -31,6 +32,9 @@ section {
     align-items: center;
     article{
         width: 90%;
+        h2{
+            text-align: center;
+        }
         div{
             div.images{
                 justify-content: center;
@@ -55,6 +59,9 @@ section {
     background: url('/assets/imgs/reino_chuche/reino_chuche_lugares.jpg') no-repeat right center;
     background-size: cover;
     article{
+        position: relative;
+        width: 60vw;
+        height: 60vh;
         div{
             ul{
                 padding: 0;
@@ -73,35 +80,97 @@ section {
 
                 }
                 li:hover{
-                    background:darken($color: #fc5c9c, $amount: 10)
+                    background: darken(#fc5c9c,10);
                 }
             }
         }
-        div.card{
-            color: black;
+        div.lugares{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        div.cards{
+            div.card{
+                display: none;
+                color: white;
+                border: none;
+                text-shadow: none;
+                background: rgba($color: #ff1f5a, $alpha: .6);
+                .card-body{
+                    background: linear-gradient(#ff1f5a,#c94e4e)
+                }
+                img{
+                    width: 100%;
+                    height: 300px;
+                }
+            }    
         }
     }
 }
 #sectionGaleria{
-    background: url('/assets/imgs/curiosidades.jpg') no-repeat;
-    
+    background: url('/assets/imgs/reino_chuche/reino_chuche_intro.gif') no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: flex-start;
+    article{
+        height: 50vh;
+        width: 50vw;
+    }
 }
+@media screen and(max-width: 1100px){
+    #sectionLugares{
+        height: auto;
+        align-items: flex-start;
+        article{
+            width: 80vw;
+            height: auto;
+        }
+        div.cards{
+            margin: auto;
+        }
+        div.lugares{
+            position: relative !important;
+            top: 50%;
+        }
+    }
+}
+
 @media screen and(max-width: 600px){
     section{
         height: 100vmax;
     }
-    #sectionGeografia{
+    #intro{
         height: auto;
+    }
+    #sectionUbicacion{
         article{
             width: auto;
             div{
                 div.images{
                     img{
-                        width: 300px;
-                        height: 150px;
+                        width: 200px !important;
+                        height: 100px !important;
                     }
                 }
             }
+        }
+    }
+    #sectionLugares{
+        height: auto;
+        align-items: flex-start;
+        article{
+            width: 80vw;
+            height: auto;
+        }
+        div.lugares{
+            position: relative !important;
+            top: 50%;
+        }
+    }
+    #sectionGaleria{
+        align-items: center;
+        article{
+            width: 80vw;
         }
     }
 }

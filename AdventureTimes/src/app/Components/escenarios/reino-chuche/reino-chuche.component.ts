@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { absoluteFromSourceFile } from '@angular/compiler-cli/src/ngtsc/file_system';
+import { Component, ElementRef, OnInit } from '@angular/core';
+import {gsap, TimelineMax} from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 @Component({
   selector: 'app-reino-chuche',
@@ -8,7 +11,18 @@ import { Component, OnInit } from '@angular/core';
 export class ReinoChucheComponent implements OnInit {
   lugares: Object;
   lugarSelected: number = 0;
+  galleryImages: string[];
+  changeCardTimeLine = new TimelineMax();
   constructor() {
+    this.galleryImages = [
+      "/assets/imgs/reino_chuche/gallery/reino_chuche_gallery_1.png",
+      "/assets/imgs/reino_chuche/gallery/reino_chuche_gallery_2.png",
+      "/assets/imgs/reino_chuche/gallery/reino_chuche_gallery_3.png",
+      "/assets/imgs/reino_chuche/gallery/reino_chuche_gallery_4.jpg",
+      "/assets/imgs/reino_chuche/gallery/reino_chuche_gallery_5.jpg",
+      "/assets/imgs/reino_chuche/gallery/reino_chuche_gallery_6.jpg",
+      "/assets/imgs/reino_chuche/gallery/reino_chuche_gallery_7.jpg",
+    ]
     this.lugares = [
       {
         id: 1,
@@ -30,10 +44,179 @@ export class ReinoChucheComponent implements OnInit {
       }
     ]
 }
-changeCard(id){
-  this.lugarSelected = id;
-}
-ngOnInit(): void {
-}
 
+ngOnInit(): void {
+  gsap.registerPlugin(ScrollTrigger)
+  gsap.delayedCall(1, () => ScrollTrigger.refresh());
+  this.introSectionAnimation();
+  this.sectionUbicacionAnimation();
+  this.sectionLugaresAnimation();
+  this.sectionGalleryAnimation();
+}
+sectionGalleryAnimation(){
+  let galleryTimeLine = new TimelineMax(this.getScrollTriggerConfig("#sectionGaleria article"))
+  galleryTimeLine.fromTo("#sectionGaleria article h1",1,{
+    x: 200,
+  },{
+    x: 0
+  }).fromTo("#sectionGaleria article #carousel",.5,{
+    transform: "scale(0)"
+  },{
+    transform: "scale(1)"
+  })
+}
+sectionLugaresAnimation(){
+  let lugaresTimeLine = new TimelineMax(this.getScrollTriggerConfig("#sectionLugares article"))
+  lugaresTimeLine.fromTo("#sectionLugares article .lugares h2",.5,{
+    transform: "scaleY(0)"
+  },{
+    transform: "scaleY(1)"
+  }).fromTo("#sectionLugares article .lugares ul li:nth-child(odd)",.5,{
+    transform: "scaleX(0)"
+  },{
+    transform: "scaleX(1)"
+  }).fromTo("#sectionLugares article .lugares ul li:nth-child(even)",.5,{
+    transform: "scaleY(0)"
+  },{
+    transform: "scaleY(1)"
+  })
+}
+sectionUbicacionAnimation(){
+  let ubicacionTimeLine = new TimelineMax(this.getScrollTriggerConfig("#sectionUbicacion article"))
+  let ubicacionTimeLine_1 = new TimelineMax(this.getScrollTriggerConfig("#sectionUbicacion article"))
+  ubicacionTimeLine.fromTo("#sectionUbicacion article h2",1,{
+    y: -100,
+    opacity: 0,
+  },{
+    y: 0,
+    opacity: 1
+  }).fromTo("#sectionUbicacion article p",1,{
+    transform: "scaleX(0)"
+  },{
+    transform: "scaleX(1)"
+  })
+  ubicacionTimeLine_1.fromTo("#sectionUbicacion article div img:nth-child(1)",1,{
+    x: -100,
+    y: 100,
+    opacity: 0,
+  },{
+    x: 0,
+    y: 0,
+    opacity: 1,
+  }).fromTo("#sectionUbicacion article div img:nth-child(2)",1,{
+    x: 100,
+    y: 100,
+    opacity: 0,
+  },{
+    x: 0,
+    y: 0,
+    opacity: 1,
+  })
+}
+introSectionAnimation(){
+  let introTimeLine = new TimelineMax({
+    scrollTrigger: {
+      trigger: "#intro article",
+      toggleActions: "restart none restart none",
+      start: "top center"
+    }
+  });
+  introTimeLine.fromTo("#intro article h1",1,{
+    x: -100,
+    y: -100,
+    transform: "scaleX(0)"
+  },{
+    x: 0,
+    y: 0,
+    transform: "scaleX(1)"
+
+  })
+  gsap.fromTo("#intro article p:nth-child(even)",1,{
+    scrollTrigger: {
+      trigger: "#intro article",
+      toggleActions: "restart none restart none",
+      start: "top center"
+    },
+    x: -100,
+    y: 100,
+    transform: "scaleX(0)"
+  },{
+    scrollTrigger: {
+      trigger: "#intro article",
+      toggleActions: "restart none restart none",
+      start: "top center"
+    },
+    x: 0,
+    y: 0,
+    transform: "scaleX(1)"
+  })
+  gsap.fromTo("#intro article p:nth-child(odd)",1,{
+    scrollTrigger: {
+      trigger: "#intro article",
+      toggleActions: "restart none restart none",
+      start: "top center"
+    },
+    x: 100,
+    y: -100,
+    transform: "scaleY(0)"
+  },{
+    scrollTrigger: {
+      trigger: "#intro article",
+      toggleActions: "restart none restart none",
+      start: "top center"
+    },
+    x: 0,
+    y: 0,
+    transform: "scaleY(1)"
+  })
+}
+getScrollTriggerConfig(trigger){
+  return {
+    scrollTrigger: {
+      trigger: trigger,
+      toggleActions: "restart none restart none",
+      start: "top center"
+    }
+  }
+}
+changeCard(id){
+  if(id != this.lugarSelected){
+    if(window.innerWidth > 1100 && this.lugarSelected == 0){
+      console.log("se ejecuta");
+      this.changeCardTimeLine.fromTo(".lugares",.5,{
+        position: "absolute",
+        left: "50%",
+        transform: "translateX(-50%)",
+      },{
+        left: 0,
+        transform: "translateX(0)",
+      })
+    }
+    if(window.innerWidth < 1100 && this.lugarSelected == 0){
+      this.changeCardTimeLine.to("#sectionLugares",.5,{
+        height: "140vh",
+      }).fromTo("#sectionLugares .lugares",.5,{
+        left: 0,
+        transform: "translateY(0)",
+      },{
+      })
+    }
+    if(this.lugarSelected != 0){
+      this.changeCardTimeLine.to("#sectionLugares article #card_"+this.lugarSelected,.5,{
+        transform: "scale(0)",
+        opacity: 0,
+        display: "none",
+      })
+    }
+    this.lugarSelected = id;
+    this.changeCardTimeLine.fromTo("#sectionLugares article #card_"+id,1,{
+      transform: "scale(1)",
+      opacity: 1,
+      x: 100,
+    },{
+      display: "block",
+      x: 0,
+    })
+  }
+}
 }

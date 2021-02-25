@@ -1,26 +1,29 @@
 <section id="intro">
     <article class="align-middle" style="width: 900px;">
-        <h1>Reino de hielo</h1>
+        <h1>Reino Chuche</h1>
         <p>
             El Dulce Reino o Chuchelandia es un reino gobernado actualmente por la Princesa Dulce.
-
+        </p>
+        <p>
             Esta hecho de dulce, azúcar y diferentes tipos de postres. Es el reino más popular y recurrente en la serie,
             así como también el reino con más tecnología y seguridad en Ooo, a pesar de estar en su mayoría hecho de
             dulces y de que todo lo que hay en él es comestible.
-
+        </p>
+        <p>
             La Dulce Gente son los ciudadanos que viven allí, la mayoría de ellos parecen algún tipo de caramelo o
             dulce. Algunas Dulces Personas conocidas son el Señor Panquesito, Choco Fruta, Chet, Mentita y la Doctora
             Helado. Los residentes también incluyen a la Princesa, su mascota Arcoiris, Piñata, entre otros. Las fiestas
             y celebraciones más importantes se celebran aquí lo que puede ser la cultura del reino, o la propia
             personalidad de la Dulce Princesa.
-
+        </p>
+        <p>
             Se sabe que Finn y Jake visitan el reino en muchas de sus aventuras y también que el Rey Helado frecuenta
             este reino en su intento constante de secuestrar a la Dulce Princesa o simplemente para molestar.
         </p>
     </article>
 </section>
 <section id="sectionUbicacion">
-    <article class="row">
+    <article class="row justify-content-center">
         <div class="d-flex flex-column col-sm-12 col-lg-7 justify-content-start">
             <h2>Ubicacion</h2>
             <p>
@@ -33,18 +36,18 @@
         </div>
     </article>
 </section>
-<section id="sectionLugares" class="justify-content-center">
-    <article>
-        <div class="col-12 mb-5" style="text-align: center;">
-            <h2>Lugares</h2>
-            <ul>
-                <li (click)="changeCard(2)">Ducado de la Nuez</li>
-                <li (click)="changeCard(1)">Castillo de la princesa dulce</li>
-                <li (click)="changeCard(3)">Cooles hotel</li>
-            </ul>
-        </div>
-            <div class="cards" *ngFor="let lugar of lugares">
-                <div class="card" *ngIf="this.lugarSelected == lugar.id">
+<section id="sectionLugares" class="d-flex justify-content-center">
+    <article class="row align-items-center justify-content-end">
+            <div class="col-sm-12 col-md-12 col-xl-6 mb-5 lugares" style="text-align: center;">
+                <h2>Lugares</h2>
+                <ul>
+                    <li (click)="changeCard(2)">Ducado de la Nuez</li>
+                    <li (click)="changeCard(1)">Castillo de la princesa dulce</li>
+                    <li (click)="changeCard(3)">Cooles hotel</li>
+                </ul>
+            </div>
+            <div class="cards col-sm-12 col-md-8 col-xl-6">
+                <div class="card" id="card_{{lugar.id}}" *ngFor="let lugar of lugares" #card>
                     <img src="{{lugar.image}}" alt="" class="card-img-top">
                     <div class="card-body">
                         <h3 class="card-title">
@@ -59,6 +62,13 @@
 </section>
 <section id="sectionGaleria">
     <article>
-        <h1>Galeria</h1>
+        <h1 style="text-align: center;">Galeria</h1>
+        <ngb-carousel #carousel [interval]="2000" id="carousel">
+            <ng-template ngbSlide *ngFor="let img of galleryImages; index as i">
+                <div id="imgGaleriaContainer" class="picsum-img-wrapper">
+                  <img [src]="img" style="width: 100%; height: 100%;" alt="My image {{i + 1}} description">
+                </div>
+            </ng-template>
+          </ngb-carousel>
     </article>
 </section>

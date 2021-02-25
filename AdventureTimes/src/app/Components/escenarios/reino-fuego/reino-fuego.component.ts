@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import {gsap, TimelineMax} from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
 @Component({
   selector: 'app-reino-fuego',
   templateUrl: './reino-fuego.component.html',
@@ -8,7 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class ReinoFuegoComponent implements OnInit {
   habitantes: Object;
   habitanteSelected: number = 0;
+  galleryImages: string[];
+  changeCardTimeLine = new TimelineMax();
   constructor() {
+    this.galleryImages = [
+      "/assets/imgs/reino_fuego/gallery/reino_fuego_gallery_1.jpg",
+      "/assets/imgs/reino_fuego/gallery/reino_fuego_gallery_2.png",
+      "/assets/imgs/reino_fuego/gallery/reino_fuego_gallery_3.png",
+      "/assets/imgs/reino_fuego/gallery/reino_fuego_gallery_4.jpg",
+      "/assets/imgs/reino_fuego/gallery/reino_fuego_gallery_5.png",
+    ]
     this.habitantes = [
       {id: 1,title: "Princesa Llama", descripcion: "La Reina Llama (anteriormente conocida como Princesa Llama, verdaderamente llamada Phoebe [ Fibi ]) es uno de los personajes principales de Hora de Aventura.",image:"/assets/imgs/reino_fuego/reino_fuego_habitante_1.png"},
       {id: 2,title: "Rey Llama", descripcion: "El Rey Flama (Rey Llama en España y Flame King en E.U.A) es un personaje que apareció por primera vez en el episodio Incendio. Él era el gobernante del Reino del Fuego (hasta que su hija lo destronó) y padre de la Princesa Flama.",image:"/assets/imgs/reino_fuego/reino_fuego_habitante_2.png"},
@@ -20,10 +30,147 @@ export class ReinoFuegoComponent implements OnInit {
       {id: 8,title: "Juglar Llama", descripcion: "El Juglar Llama apareció en el episodio Incendio cuando Jake tomó prestada su guitarra de fuego pues tenía que interpretar la canción Siento Fuego Dentro de Mi a la Princesa Flama como regalo de parte de Finn.",image:"/assets/imgs/reino_fuego/reino_fuego_habitante_8.png"},
     ]
    }
-  changeCard(id){
-    this.habitanteSelected = id;
-  }
+  
   ngOnInit(): void {
+    gsap.registerPlugin(ScrollTrigger)
+    gsap.delayedCall(1, () => ScrollTrigger.refresh());
+    this.sectionGaleriaAnimation();
+    this.introAnimation();
+    this.sectionUbicationAnimation();
+    this.sectionHabitantesAnimation();
   }
-
+  sectionHabitantesAnimation(){
+    let habitantesTimeLine = new TimelineMax(this.getScrollTriggerConfig("#sectionHabitantes article"));
+    let habitantesTimeLine_1 = new TimelineMax(this.getScrollTriggerConfig("#sectionHabitantes article"));
+    habitantesTimeLine.fromTo("#sectionHabitantes article h1",.5,{
+      y: -100,
+      opacity: 0
+    },{
+      y: 0,
+      opacity: 1
+    }).fromTo("#sectionHabitantes article ul li:nth-child(even)",1,{
+      transform: "scaleX(0)"
+    },{
+      transform: "scaleX(1)"
+    })
+    habitantesTimeLine_1.fromTo("#sectionHabitantes article ul li:nth-child(odd)",1,{
+      transform: "scaleY(0)"
+    },{
+      transform: "scaleY(1)"
+    }).delay(.5)
+  }
+  sectionUbicationAnimation(){
+    let ubicacionTimeLine = new TimelineMax(this.getScrollTriggerConfig("#sectionUbicacion article"));
+    let ubicacionTimeLine_1 = new TimelineMax(this.getScrollTriggerConfig("#sectionUbicacion article"));
+    ubicacionTimeLine.fromTo("#sectionUbicacion article div:nth-child(1) h2",1,{
+      x: 100,
+      opacity: 0,
+    },{
+      x: 0,
+      opacity: 1
+    }).fromTo("#sectionUbicacion article div:nth-child(1) p",1,{
+      transform: "scale(0)",
+      x: -100,
+      y: 100
+    },{
+      transform: "scale(1)",
+      x: 0,
+      y: 0
+    });
+    ubicacionTimeLine_1.fromTo("#sectionUbicacion article div:nth-child(2) h2",1,{
+      x: -100,
+      opacity: 0,
+    },{
+      x: 0,
+      opacity: 1
+    }).fromTo("#sectionUbicacion article div:nth-child(2) p",1,{
+      transform: "scale(0)",
+      x: 100,
+      y: 100
+    },{
+      transform: "scale(1)",
+      x: 0,
+      y: 0
+    });
+  }
+  introAnimation(){
+    let introTimeLine = new TimelineMax(this.getScrollTriggerConfig("#intro article"))
+    introTimeLine.fromTo("#intro article h1",1,{
+      x: 100,
+      y: -100,
+      transform: "scaleX(0)"
+    },{
+      transform: "scaleX(1)",
+      x: 0,
+      y: 0,
+    }).fromTo("#intro article p:nth-child(even)",1,{
+      x: 100,
+      transform: "scaleY(0)"
+    },{
+      x: 0,
+      transform: "scaleY(1)"
+    })
+  }
+  sectionGaleriaAnimation(){
+    let galleryTimeLine = new TimelineMax(this.getScrollTriggerConfig("#sectionGaleria article"))
+    galleryTimeLine.fromTo("#sectionGaleria article h1",1,{
+      x: 200,
+    },{
+      x: 0
+    }).fromTo("#sectionGaleria article #carousel",.5,{
+      transform: "scale(0)"
+    },{
+      transform: "scale(1)"
+    })
+  }
+  changeCard(id){
+    if(id != this.habitanteSelected){
+      if(window.innerWidth > 1100 && this.habitanteSelected == 0){
+        console.log("se ejecuta");
+        this.changeCardTimeLine.fromTo(".habitantes",.5,{
+          position: "absolute",
+          left: "50%",
+          transform: "translateX(-50%)",
+        },{
+          left: 0,
+          transform: "translateX(0)",
+        })
+      }
+      if(window.innerWidth < 1100 && this.habitanteSelected == 0){
+        this.changeCardTimeLine.to("#sectionHabitantes",.5,{
+          height: "140vh",
+        }).fromTo("#sectionHabitantes .habitantes",.5,{
+          left: 0,
+          transform: "translateY(0)",
+        },{
+        })
+      }
+      if(this.habitanteSelected != 0){
+        
+        this.changeCardTimeLine.to("#sectionHabitantes #card_"+this.habitanteSelected,.5,{
+          transform: "scale(0)",
+          opacity: 0,
+          display: "none",
+        })
+      }
+      this.habitanteSelected = id;
+      this.changeCardTimeLine.fromTo("#sectionHabitantes #card_"+id,1,{
+        transform: "scale(1)",
+        opacity: 1,
+        x: 100,
+      },{
+        display: "block",
+        x: 0,
+      })
+    }
+  }
+  getScrollTriggerConfig(trigger){
+    return {
+      scrollTrigger: {
+        trigger: trigger,
+        toggleActions: "restart none restart none",
+        start: "top center"
+      }
+    }
+  }
 }

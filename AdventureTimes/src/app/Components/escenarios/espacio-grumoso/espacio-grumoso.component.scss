@@ -20,11 +20,11 @@ section {
 }
 
 #intro{
-    background: url('/assets/imgs/intro.jpg');
+    background: url('/assets/imgs/espacio_grumoso/intro.jpg');
 }
 
 #sectionGeografia{
-    background: url('/assets/imgs/intro.jpg') no-repeat;
+    background: url('/assets/imgs/espacio_grumoso/intro.jpg') no-repeat;
     background-size: cover;
     background-attachment: scroll;
     transform: rotate(180deg);
@@ -49,7 +49,7 @@ section {
     }
 }
 #sectionCultura{
-    background: url('/assets/imgs/seccion1.jpg') no-repeat;
+    background: url('/assets/imgs/espacio_grumoso/seccion1.jpg') no-repeat;
     article{
         text-align: center;
         p{
@@ -63,7 +63,7 @@ section {
     }
 }
 #sectionGaleria{
-    background: url('/assets/imgs/seccion1.jpg') no-repeat;
+    background: url('/assets/imgs/espacio_grumoso/seccion1.jpg') no-repeat;
     transform: rotate(180deg);
     justify-content: center;
     article{
@@ -74,7 +74,6 @@ section {
             outline: none;
         }
     }
-    
 }
 @media screen and(max-width: 600px){
     section{
@@ -84,6 +83,9 @@ section {
         height: auto;
         article{
             width: auto;
+            h2{
+                text-align: center;
+            }
             div{
                 div.images{
                     img{
@@ -94,11 +96,14 @@ section {
             }
         }
     }
+    #sectionCultura{
+        height: auto;
+        padding: 2em 1em 2em 1em;
+    }
     #sectionGaleria{
         article{
             height: 80vh;
             width: 80vw;
         }
-        
     }
 }

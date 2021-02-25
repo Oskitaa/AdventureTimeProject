@@ -17,7 +17,7 @@ import { ScrollTrigger,TimelineMax } from 'gsap/all';
 })
 export class EpisodiosComponent implements OnInit {
 
-  public seasons;
+  public seasons ;
   public urlimg = environment.urlImg;
   public idSeason : number;
   

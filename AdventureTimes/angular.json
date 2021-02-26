@@ -28,8 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass",
-              "node_modules/aos/dist/aos.css"
+              "src/styles.sass"
             ],
             "scripts": [
             ]

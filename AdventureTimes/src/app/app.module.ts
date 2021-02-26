@@ -33,15 +33,12 @@ import { EpisodeDetailsComponent } from './Components/episode-details/episode-de
     NavbarComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
     EspacioGrumosoComponent,
     ReinoHieloComponent,
     ReinoFuegoComponent,
     ReinoChucheComponent,
-  ],
-  imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,

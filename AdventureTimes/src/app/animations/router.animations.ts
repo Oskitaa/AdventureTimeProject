@@ -2,7 +2,7 @@ import { trigger, animate, transition, style, query, group, animateChild } from 
 
 export const circularMaskAnimation =
   trigger('routeAnimations', [
-    transition('* => HomePage', [
+    transition('* <=> *', [
       style({ position: 'relative' }),
       query(':enter, :leave', [
         style({
@@ -13,21 +13,21 @@ export const circularMaskAnimation =
         })
       ]),
       query(':enter', [
-        style({ transform: "scale(0)", borderRadius: 50})
+        style({ transform: "scale(0)"})
       ]),
-      query(':leave', animateChild()),
+      query(':leave', animateChild(),{optional: true}),
       group([
         query(':leave', [
           animate('1000ms ease-out', style({ opacity: 0 }))
-        ]),
+        ],{optional: true}),
         query(':enter', [
-          animate('1000ms ease-out', style({transform: "scale(1)", borderRadius: 0}))
+          animate('1000ms ease-out', style({transform: "scale(1)"}))
         ])
       ]),
       query(':enter', animateChild()),
     ]),
-  ]);
 
+  ]);
 export const slideInAnimation =
   trigger('routeAnimations', [
     transition('HomePage <=> AboutPage', [
@@ -70,7 +70,7 @@ export const slideInAnimation =
       query(':leave', animateChild()),
       group([
         query(':leave', [
-          animate('200ms ease-out', style({ left: '100%' }))
+          animate('200ms ease-out', style({ left: '100%', }))
         ]),
         query(':enter', [
           animate('300ms ease-out', style({ left: '0%' }))

@@ -1,0 +1,42 @@
+.border-card {
+    overflow:scroll;
+    width: 20rem;
+    height: 27em;
+    background-color: hsl(189deg, 76%, 12%);;
+    border: 2px solid black;
+    border-radius: 20px;
+    text-align: center;
+
+    .img-tienda {
+        width: 80%;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    .color-card {
+        color: hsl(0deg, 0, 76);
+
+        #ench {
+            margin-left: 20%;
+            width: 30px;
+            transition: all 1s;
+        }
+    }
+}
+
+/*Scrollbar*/
+.border-card::-webkit-scrollbar {
+    display: none;
+}
+
+.border-card:hover {
+    background-color: hsl(189deg 86% 7%);
+
+    .color-card {
+        color:royalblue;
+    }
+    
+    #ench{
+        transform: rotate(720deg) scale(0,0);
+    }
+}

@@ -1,1 +1,17 @@
-<p>tienda works!</p>
+<div id="content">
+    <app-navbar></app-navbar>
+    <section id="tarjetas">
+        <app-tarjeta-tienda class="tarjeta" [title]="t1" [desc]="d1" [img]="img1" (activaCompra)="pow(t1)"></app-tarjeta-tienda>
+        <app-tarjeta-tienda class="tarjeta" [title]="t2" [desc]="d2" [img]="img2" (activaCompra)="pow(t2)"></app-tarjeta-tienda>
+        <app-tarjeta-tienda class="tarjeta" [title]="t3" [desc]="d3" [img]="img3" (activaCompra)="pow(t3)"></app-tarjeta-tienda>
+        <app-tarjeta-tienda class="tarjeta" [title]="t4" [desc]="d4" [img]="img4" (activaCompra)="pow(t4)"></app-tarjeta-tienda>
+        <app-tarjeta-tienda class="tarjeta" [title]="t5" [desc]="d5" [img]="img5" (activaCompra)="pow(t5)"></app-tarjeta-tienda>
+        <app-tarjeta-tienda class="tarjeta" [title]="t6" [desc]="d6" [img]="img6" (activaCompra)="pow(t6)"></app-tarjeta-tienda>
+    </section>
+    <section>
+        <div id="scb" *ngIf="compraRealizada">
+            <p>Compra de {{ seleccionado }} realizada con éxito.</p>
+            <button (click)="compraRealizada=!compraRealizada" class="btn btn-success">Ok</button>
+        </div>
+    </section>
+</div>

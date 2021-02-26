@@ -44,6 +44,14 @@ const routes: Routes = [
     path: "seasons",
     component: EpisodiosComponent
   },
+  {
+    path: "seasons/:id",
+    component: EpisodeDetailsComponent
+  },
+  {
+    path: "seasons/:idSeason/episode/:idEpisode",
+    component: EpisodeDetailsComponent
+  }
 ];
 
 @NgModule({

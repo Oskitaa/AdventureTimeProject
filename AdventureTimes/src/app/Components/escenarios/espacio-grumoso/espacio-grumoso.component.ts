@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Scroll } from '@angular/router';
+import { Router, Scroll } from '@angular/router';
+import { trigger, animate, transition, style, query, group, animateChild } from '@angular/animations';
 import { NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 import {gsap, TimelineMax} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
@@ -15,7 +16,7 @@ export class EspacioGrumosoComponent implements OnInit {
   pauseOnIndicator = false;
   pauseOnHover = true;
   pauseOnFocus = true;
-  constructor() {
+  constructor(private route: Router) {
     this.images = [
       "/assets/imgs/espacio_grumoso/gallery/image_1.jpg",
       "/assets/imgs/espacio_grumoso/gallery/image_2.jpg",
@@ -29,8 +30,12 @@ export class EspacioGrumosoComponent implements OnInit {
   ngOnInit(): void {
     gsap.registerPlugin(ScrollTrigger)
     gsap.delayedCall(1, () => ScrollTrigger.refresh());
-  }
-  ngAfterViewInit(){
+    //Animacion para la imagen de volver atrás
+    gsap.fromTo("img.volver_atras",{
+      transform: "scale(0)"
+    },{
+      transform: "scale(1)"
+    }).duration(1)
     //Animacion de la seccion intro del componente
     let introTimeLine = new TimelineMax({
       scrollTrigger: {
@@ -46,17 +51,20 @@ export class EspacioGrumosoComponent implements OnInit {
     },{
       transform: "scale(1)"
     }).fromTo("#intro p",.5,{
-      x: 200,
-      y: 200,
       transform: "scale(0)",
     },{
       transform: "scale(1)"
     })
+    //Animaciones de la seccion Geografia
     this.sectionGeografiaAnimations();
+    //Animaciones de la seccion Cultura
     this.sectionCulturaAnimation();
+    //Animaciones de la seccion Galeria
     this.sectionGaleriaAnimation();
   }
-  
+  goToEscenarios(){
+    this.route.navigate(["/escenarios"]);
+  }
   sectionGaleriaAnimation(){
     let galeriaTimeLine = new TimelineMax({
       scrollTrigger: {
@@ -106,17 +114,15 @@ export class EspacioGrumosoComponent implements OnInit {
       borderRadius: "0"
     })
     culturaTimeLine_1.fromTo("#sectionCultura article p.enterRight",1,{
-      ease: "power3.inOut",
-      x: 300
+      y: 300
     },{
-      ease: "power3.inOut",
-      x: 0
+      y: 0
     }).fromTo("#sectionCultura article p.enterLeft",1,{
       opacity: 0,
-      x: -300
+      y: -300
     },{
       opacity: 1,
-      x: 0
+      y: 0
     })
   }
   sectionGeografiaAnimations(){

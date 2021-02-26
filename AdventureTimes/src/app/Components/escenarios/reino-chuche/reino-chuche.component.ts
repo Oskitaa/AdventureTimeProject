@@ -1,5 +1,6 @@
 import { absoluteFromSourceFile } from '@angular/compiler-cli/src/ngtsc/file_system';
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {gsap, TimelineMax} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
@@ -13,7 +14,7 @@ export class ReinoChucheComponent implements OnInit {
   lugarSelected: number = 0;
   galleryImages: string[];
   changeCardTimeLine = new TimelineMax();
-  constructor() {
+  constructor(private route: Router) {
     this.galleryImages = [
       "/assets/imgs/reino_chuche/gallery/reino_chuche_gallery_1.png",
       "/assets/imgs/reino_chuche/gallery/reino_chuche_gallery_2.png",
@@ -48,17 +49,27 @@ export class ReinoChucheComponent implements OnInit {
 ngOnInit(): void {
   gsap.registerPlugin(ScrollTrigger)
   gsap.delayedCall(1, () => ScrollTrigger.refresh());
+  gsap.fromTo("img.volver_atras",{
+    transform: "scale(0)"
+  },{
+    transform: "scale(1)"
+  }).duration(1)
   this.introSectionAnimation();
   this.sectionUbicacionAnimation();
   this.sectionLugaresAnimation();
   this.sectionGalleryAnimation();
 }
+goToEscenarios(){
+  this.route.navigate(["/escenarios"]);
+}
 sectionGalleryAnimation(){
   let galleryTimeLine = new TimelineMax(this.getScrollTriggerConfig("#sectionGaleria article"))
   galleryTimeLine.fromTo("#sectionGaleria article h1",1,{
-    x: 200,
+    opacity: 0,
+    y: -100,
   },{
-    x: 0
+    opacity: 1,
+    y: 0
   }).fromTo("#sectionGaleria article #carousel",.5,{
     transform: "scale(0)"
   },{
@@ -96,19 +107,15 @@ sectionUbicacionAnimation(){
     transform: "scaleX(1)"
   })
   ubicacionTimeLine_1.fromTo("#sectionUbicacion article div img:nth-child(1)",1,{
-    x: -100,
-    y: 100,
+    y: -100,
     opacity: 0,
   },{
-    x: 0,
     y: 0,
     opacity: 1,
   }).fromTo("#sectionUbicacion article div img:nth-child(2)",1,{
-    x: 100,
     y: 100,
     opacity: 0,
   },{
-    x: 0,
     y: 0,
     opacity: 1,
   })

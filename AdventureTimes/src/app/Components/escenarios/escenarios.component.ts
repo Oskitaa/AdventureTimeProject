@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild, QueryList, Query} from '@angular/core';
 import {NgbCarousel, NgbSlide, NgbSlideEvent, NgbSlideEventSource} from '@ng-bootstrap/ng-bootstrap';
 import {gsap, TimelineLite, TweenMax} from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {circularMaskAnimation, slideInAnimation} from 'src/app/animations/router.animations';
 @Component({
   selector: 'app-escenarios',
@@ -17,6 +18,7 @@ export class EscenariosComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    gsap.delayedCall(1, () => ScrollTrigger.refresh());
     gsap.fromTo("article h1",{y:-100},{y: 0}).duration(1);
   }
   ngAfterViewInit(){

@@ -14,12 +14,11 @@ const routes: Routes = [
   {
     path: "escenarios",
     component: EscenariosComponent,
-    data:{animation: "HomePage"}
+    data: {animation: "Escenarios"}
   },
   {
     path: "escenarios/espacio-grumoso",
     component: EspacioGrumosoComponent,
-    data: {animation: "AboutPage"}
   },
   {
     path: "escenarios/reino-hielo",

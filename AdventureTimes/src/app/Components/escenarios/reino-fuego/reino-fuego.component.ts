@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {gsap, TimelineMax} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 @Component({
@@ -11,7 +12,7 @@ export class ReinoFuegoComponent implements OnInit {
   habitanteSelected: number = 0;
   galleryImages: string[];
   changeCardTimeLine = new TimelineMax();
-  constructor() {
+  constructor(private route: Router) {
     this.galleryImages = [
       "/assets/imgs/reino_fuego/gallery/reino_fuego_gallery_1.jpg",
       "/assets/imgs/reino_fuego/gallery/reino_fuego_gallery_2.png",
@@ -30,10 +31,17 @@ export class ReinoFuegoComponent implements OnInit {
       {id: 8,title: "Juglar Llama", descripcion: "El Juglar Llama apareció en el episodio Incendio cuando Jake tomó prestada su guitarra de fuego pues tenía que interpretar la canción Siento Fuego Dentro de Mi a la Princesa Flama como regalo de parte de Finn.",image:"/assets/imgs/reino_fuego/reino_fuego_habitante_8.png"},
     ]
    }
-  
+  goToEscenarios(){
+    this.route.navigate(["/escenarios"]);   
+   }
   ngOnInit(): void {
     gsap.registerPlugin(ScrollTrigger)
     gsap.delayedCall(1, () => ScrollTrigger.refresh());
+    gsap.fromTo("img.volver_atras",{
+      transform: "scale(0)"
+    },{
+      transform: "scale(1)"
+    }).duration(.5)
     this.sectionGaleriaAnimation();
     this.introAnimation();
     this.sectionUbicationAnimation();
@@ -114,9 +122,11 @@ export class ReinoFuegoComponent implements OnInit {
   sectionGaleriaAnimation(){
     let galleryTimeLine = new TimelineMax(this.getScrollTriggerConfig("#sectionGaleria article"))
     galleryTimeLine.fromTo("#sectionGaleria article h1",1,{
-      x: 200,
+      opacity: 0,
+      y: -100,
     },{
-      x: 0
+      opacity: 1,
+      y: 0
     }).fromTo("#sectionGaleria article #carousel",.5,{
       transform: "scale(0)"
     },{
@@ -138,7 +148,7 @@ export class ReinoFuegoComponent implements OnInit {
       }
       if(window.innerWidth < 1100 && this.habitanteSelected == 0){
         this.changeCardTimeLine.to("#sectionHabitantes",.5,{
-          height: "140vh",
+          height: "170vh",
         }).fromTo("#sectionHabitantes .habitantes",.5,{
           left: 0,
           transform: "translateY(0)",

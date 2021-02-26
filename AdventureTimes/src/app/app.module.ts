@@ -40,7 +40,7 @@ import { EpisodeDetailsComponent } from './Components/episode-details/episode-de
     FormsModule,
     NgbModule,
     NgbPaginationModule, 
-    NgbAlertModule
+    NgbAlertModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

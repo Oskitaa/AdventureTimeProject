@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {gsap, TimelineMax} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
@@ -9,7 +10,7 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 })
 export class ReinoHieloComponent implements OnInit {
   galleryImages: string[]
-  constructor() { 
+  constructor(private route: Router) { 
     this.galleryImages = [
       "/assets/imgs/reino_hielo/gallery/reino_helado_gallery_1.jpg",
       "/assets/imgs/reino_hielo/gallery/reino_helado_gallery_2.png",
@@ -25,6 +26,11 @@ export class ReinoHieloComponent implements OnInit {
   ngOnInit(): void {
     gsap.registerPlugin(ScrollTrigger)
     gsap.delayedCall(1, () => ScrollTrigger.refresh());
+    gsap.fromTo("img.volver_atras",{
+      transform: "scale(0)"
+    },{
+      transform: "scale(1)"
+    }).duration(1)
     this.introAnimation();
     this.sectionUbicacionAnimation();
     this.sectionCuriosidadesAnimation();
@@ -33,7 +39,7 @@ export class ReinoHieloComponent implements OnInit {
   sectionGaleriaAnimation(){
     let galleryTimeLine = new TimelineMax(this.getScrollTriggerConfig("#sectionGaleria article"))
     galleryTimeLine.fromTo("#sectionGaleria article h1",1,{
-      x: 200,
+      y: -100,
     },{
       x: 0
     }).fromTo("#sectionGaleria article #carousel",.5,{
@@ -41,6 +47,9 @@ export class ReinoHieloComponent implements OnInit {
     },{
       transform: "scale(1)"
     })
+  }
+  goToEscenarios(){
+    this.route.navigate(["/escenarios"]);
   }
   sectionCuriosidadesAnimation(){
     let curiosidadesTimeLine = new TimelineMax(this.getScrollTriggerConfig("#sectionCuriosidades article"));
@@ -52,17 +61,17 @@ export class ReinoHieloComponent implements OnInit {
       y: 0,
       opacity: 1,
     }).fromTo("#sectionCuriosidades article ul li:nth-child(even)",1,{
-      x: 100,
+      transform: "scaleX(0)",
       opacity: 0,
     },{
-      x: 0,
+      transform: "scaleX(1)",
       opacity: 1,
     });
     curiosidadesTimeLine_1.fromTo("#sectionCuriosidades article ul li:nth-child(odd)",1,{
-      x: -100,
+      y: 100,
       opacity: 0,
     },{
-      x:  0,
+      y:  0,
       opacity: 1,
     }).delay(.5);
   }
@@ -80,19 +89,15 @@ export class ReinoHieloComponent implements OnInit {
     },{
       transform: "scale(1)"
     }).fromTo("#sectionUbicacion article div:nth-child(odd) img:nth-child(1)",.5,{
-      x: -100,
       y: 100,
       opacity: 0
     },{
-      x: 0,
       y: 0,
       opacity: 1
     }).fromTo("#sectionUbicacion article div:nth-child(odd) img:nth-child(2)",.5,{
-      x: 100,
-      y: 100,
+      y: -100,
       opacity: 0
     },{
-      x: 0,
       y: 0,
       opacity: 1
     });
@@ -105,10 +110,10 @@ export class ReinoHieloComponent implements OnInit {
     },{
       transform: "scaleX(1)"
     }).fromTo("#sectionUbicacion article div:nth-child(even) p",.5,{
-      x: 200,
+      y: 200,
       opacity: 0,
     },{
-      x: 0,
+      y: 0,
       opacity: 1
     })
   }
@@ -119,10 +124,10 @@ export class ReinoHieloComponent implements OnInit {
     },{
       transform: "scale(1)"
     }).fromTo("#intro article p:nth-child(even)",.5,{
-      x: 200,
+      y: -200,
       opacity: 0,
     },{
-      x: 0,
+      y: 0,
       opacity: 1,
     }).fromTo("#intro article p:nth-child(odd)",.5,{
       y: 100,

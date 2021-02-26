@@ -13,6 +13,7 @@ export class EscenariosComponent implements OnInit {
   @ViewChild('circleToAnimate') circle: ElementRef;
   menuOpen: boolean = true;
   prueba = new TimelineLite();
+  public ocultoBaner: boolean = true;
   
   constructor() {
    }

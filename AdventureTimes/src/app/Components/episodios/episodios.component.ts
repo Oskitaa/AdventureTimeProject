@@ -48,7 +48,7 @@ export class EpisodiosComponent implements OnInit {
     gsap.registerPlugin(ScrollTrigger);
     
     let time = new TimelineMax();
-  
+    setTimeout(()=> {
     var sections = gsap.utils.toArray('.temp');
 
     sections.forEach((section : any) => {
@@ -68,6 +68,6 @@ export class EpisodiosComponent implements OnInit {
       },{
         autoAlpha:1
       }).duration(6)
-    })
+    })}, 300)
   }
 }

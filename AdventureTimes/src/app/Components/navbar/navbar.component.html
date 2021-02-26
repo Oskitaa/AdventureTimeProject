@@ -1,4 +1,4 @@
-<div id="banner"></div>
+<div id="banner" *ngIf="!oc"></div>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <button id="inicio" class="btn btn-outline-primary" routerLink="/">Inicio</button>
@@ -13,7 +13,7 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/escenarios">Escenarios</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" routerLink="/tienda">Tienda</a>
         </li>
       </ul>

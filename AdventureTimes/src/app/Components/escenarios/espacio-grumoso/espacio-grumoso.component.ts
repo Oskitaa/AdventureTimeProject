@@ -92,7 +92,6 @@ export class EspacioGrumosoComponent implements OnInit {
         trigger: "#sectionCultura article",
         toggleActions: "restart none restart pause",
         start: "top bottom",
-        markers:true
       }
     })
     culturaTimeLine.fromTo("#sectionCultura article h2",1,{

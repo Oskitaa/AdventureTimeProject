@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +8,6 @@ import { PersonajesComponent } from './Components/personajes/personajes.componen
 import { EpisodiosComponent } from './Components/episodios/episodios.component';
 import { EscenariosComponent } from './Components/escenarios/escenarios.component';
 import { TiendaComponent } from './Components/tienda/tienda.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EspacioGrumosoComponent } from './Components/escenarios/espacio-grumoso/espacio-grumoso.component';
 import { ReinoHieloComponent } from './Components/escenarios/reino-hielo/reino-hielo.component';
@@ -26,15 +24,13 @@ import { EpisodeDetailsComponent } from './Components/episode-details/episode-de
     InicioComponent,
     PersonajesComponent,
     EpisodiosComponent,
+    EpisodeDetailsComponent,
     EscenariosComponent,
     TiendaComponent,
     EspacioGrumosoComponent,
     ReinoHieloComponent,
     ReinoFuegoComponent,
     ReinoChucheComponent,
-  ],
-  imports: [
-    EpisodeDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -44,8 +40,7 @@ import { EpisodeDetailsComponent } from './Components/episode-details/episode-de
     FormsModule,
     NgbModule,
     NgbPaginationModule, 
-    NgbAlertModule,
-    EpisodeDetailsComponent
+    NgbAlertModule
   ],
   providers: [],
   bootstrap: [AppComponent]

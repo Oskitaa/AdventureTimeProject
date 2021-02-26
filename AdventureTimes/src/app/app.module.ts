@@ -30,12 +30,7 @@ import { EpisodeDetailsComponent } from './Components/episode-details/episode-de
     EscenariosComponent,
     TiendaComponent,
     TarjetaTiendaComponent,
-    NavbarComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule
+    NavbarComponent,
     EspacioGrumosoComponent,
     ReinoHieloComponent,
     ReinoFuegoComponent,
@@ -44,12 +39,13 @@ import { EpisodeDetailsComponent } from './Components/episode-details/episode-de
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     HttpClientModule,
+    AppRoutingModule,
     FormsModule,
     NgbModule,
     NgbPaginationModule, 
     NgbAlertModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

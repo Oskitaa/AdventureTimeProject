@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './Components/inicio/inicio.component';
-import { PersonajesComponent } from './Components/personajes/personajes.component';
 import { EpisodiosComponent } from './Components/episodios/episodios.component';
 import { EscenariosComponent } from './Components/escenarios/escenarios.component';
 import { TiendaComponent } from './Components/tienda/tienda.component';
@@ -24,7 +23,6 @@ import { EpisodeDetailsComponent } from './Components/episode-details/episode-de
   declarations: [
     AppComponent,
     InicioComponent,
-    PersonajesComponent,
     EpisodiosComponent,
     EpisodeDetailsComponent,
     EscenariosComponent,

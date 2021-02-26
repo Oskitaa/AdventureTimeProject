@@ -7,9 +7,13 @@ import { ReinoChucheComponent } from './Components/escenarios/reino-chuche/reino
 import { ReinoFuegoComponent } from './Components/escenarios/reino-fuego/reino-fuego.component';
 import { ReinoHieloComponent } from './Components/escenarios/reino-hielo/reino-hielo.component';
 import { InicioComponent } from './Components/inicio/inicio.component';
+import { EscenariosComponent } from './Components/escenarios/escenarios.component';
+import { InicioComponent } from './Components/inicio/inicio.component';
+import { TiendaComponent } from './Components/tienda/tienda.component';
+import { EpisodeDetailsComponent } from './Components/episode-details/episode-details.component';
 
 const routes: Routes = [
-  {
+    {
     path: "escenarios",
     component: EscenariosComponent,
     data: {animation: "Escenarios"}
@@ -32,8 +36,29 @@ const routes: Routes = [
   {
     path: "escenarios/reino-chuche",
     component: ReinoChucheComponent,
+  },
+  {
+    path:"",
+    component:InicioComponent
+  },
+  {
+    path:"escenarios",
+    component:EscenariosComponent
+  },
+  {
+    path:"tienda",
+    component:TiendaComponent
+  },
+  {
+    path: "seasons",
+    component: EpisodiosComponent
+  },
+  {
+    path: "seasons/:id",
+    component: EpisodeDetailsComponent
   }
 ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

@@ -47,6 +47,11 @@ git push
 git pull
 ```
 
+- Si por casualidad os quereis mover por ramas con comandos se hace con el comando branch para ver las ramas qu hay:
+
+```
+git branch
+```
 - Si por casualidad os quereis mover por ramas con comandos se hace con el comando checkout:
 
 ```

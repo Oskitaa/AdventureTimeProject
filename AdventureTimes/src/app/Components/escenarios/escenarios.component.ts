@@ -14,15 +14,12 @@ export class EscenariosComponent implements OnInit {
   prueba = new TimelineLite();
   
   constructor() {
-    gsap.delayedCall(2, () => gsap.refresh());
    }
 
   ngOnInit(): void {
     gsap.fromTo("article h1",{y:-100},{y: 0}).duration(1);
-    
   }
   ngAfterViewInit(){
-    gsap.delayedCall(2, () => ScrollTrigger.refresh());
     this.sectionArticles.nativeElement.childNodes.forEach(article => article.addEventListener('mouseenter', () => {
       gsap.fromTo("article h1",{y: -100},{y:0}).duration(.5);
       gsap.fromTo("article a", {y: 100},{y: 0}).duration(.5);

@@ -21,7 +21,8 @@ export class EpisodiosComponent implements OnInit {
   public urlimg = environment.urlImg;
   public idSeason : number;
   
-  constructor(private peti : PajaxService, private modalService: NgbModal) {}
+  constructor(private peti : PajaxService, private modalService: NgbModal) {
+  }
   
    mostrarModalInfo(myModalInfo,id : number=null) : void{
      this.modalService.open(myModalInfo,
@@ -44,7 +45,6 @@ export class EpisodiosComponent implements OnInit {
   }
   
   ngAfterViewInit() : void{
-
     gsap.registerPlugin(ScrollTrigger);
     
     let time = new TimelineMax();

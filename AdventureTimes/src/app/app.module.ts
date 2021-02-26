@@ -31,12 +31,14 @@ import { EpisodeDetailsComponent } from './Components/episode-details/episode-de
     TiendaComponent,
     TarjetaTiendaComponent,
     NavbarComponent,
+  ],
+  imports: [
+    AppRoutingModule,
+    NgbModule,
     EspacioGrumosoComponent,
     ReinoHieloComponent,
     ReinoFuegoComponent,
     ReinoChucheComponent,
-  ],
-  imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,

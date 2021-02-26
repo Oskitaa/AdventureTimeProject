@@ -1,0 +1,56 @@
+.arriba {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  color: #fff;
+  z-index: 3;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.episode {
+  border-top: 1px solid #404040;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  transform:scale(0);
+  &:first-child {
+    border-top: none;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
+  p {
+    margin-top: 5px;
+    font-size: 3vw;
+    text-align: left;
+    padding: 0;
+  }
+}
+
+img {
+  max-width: 150px;
+  max-height: 100px;
+}
+
+@media only screen and (min-width: 768px) {
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  * {
+    padding: 10px;
+  }
+
+  .episode p {
+    font-size: 1vw;
+  }
+
+  img {
+    max-width: 250px;
+    max-height: 180px;
+  }
+}

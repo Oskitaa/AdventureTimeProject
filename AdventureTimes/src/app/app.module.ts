@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './Components/inicio/inicio.component';
@@ -14,6 +15,10 @@ import { EspacioGrumosoComponent } from './Components/escenarios/espacio-grumoso
 import { ReinoHieloComponent } from './Components/escenarios/reino-hielo/reino-hielo.component';
 import { ReinoFuegoComponent } from './Components/escenarios/reino-fuego/reino-fuego.component';
 import { ReinoChucheComponent } from './Components/escenarios/reino-chuche/reino-chuche.component';
+import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+import { EpisodeDetailsComponent } from './Components/episode-details/episode-details.component';
 
 @NgModule({
   declarations: [
@@ -29,11 +34,18 @@ import { ReinoChucheComponent } from './Components/escenarios/reino-chuche/reino
     ReinoChucheComponent,
   ],
   imports: [
+    EpisodeDetailsComponent
+  ],
+  imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    NgbModule,
+    HttpClientModule,
     FormsModule,
+    NgbModule,
+    NgbPaginationModule, 
+    NgbAlertModule,
+    EpisodeDetailsComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

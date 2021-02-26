@@ -19,7 +19,6 @@ export class EscenariosComponent implements OnInit {
 
   ngOnInit(): void {
     gsap.delayedCall(1, () => ScrollTrigger.refresh());
-    
     gsap.fromTo("article h1",{y:-100},{y: 0}).duration(1);
   }
   ngAfterViewInit(){

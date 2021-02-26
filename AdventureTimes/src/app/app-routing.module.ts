@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
 import { EscenariosComponent } from './Components/escenarios/escenarios.component';
 import { EspacioGrumosoComponent } from './Components/escenarios/espacio-grumoso/espacio-grumoso.component';
 import { ReinoChucheComponent } from './Components/escenarios/reino-chuche/reino-chuche.component';
@@ -12,15 +11,12 @@ import { EpisodeDetailsComponent } from './Components/episode-details/episode-de
 import { EpisodiosComponent } from './Components/episodios/episodios.component';
 
 const routes: Routes = [
-    {
+  {
     path: "escenarios",
     component: EscenariosComponent,
     data: {animation: "Escenarios"}
   },
   {
-    path: "",
-    component: InicioComponent
-  },{
     path: "escenarios/espacio-grumoso",
     component: EspacioGrumosoComponent,
   },
@@ -41,10 +37,6 @@ const routes: Routes = [
     component:InicioComponent
   },
   {
-    path:"escenarios",
-    component:EscenariosComponent
-  },
-  {
     path:"tienda",
     component:TiendaComponent
   },
@@ -52,10 +44,7 @@ const routes: Routes = [
     path: "seasons",
     component: EpisodiosComponent
   },
-  {
-    path: "seasons/:id",
-    component: EpisodeDetailsComponent
-  }
+
 ];
 
 @NgModule({

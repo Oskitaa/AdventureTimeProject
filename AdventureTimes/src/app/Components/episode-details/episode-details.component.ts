@@ -31,13 +31,12 @@ export class EpisodeDetailsComponent{
     let time = new TimelineMax();
     setTimeout(() => {
       var sections : any = gsap.utils.toArray('.episode');
-      console.log(sections);
       sections.forEach((section) =>{
         time.to(<any>section,{
           transform:"scale(1)"
         }).duration(2)
       })  
-    }, 100);
+    }, 500);
 
   }
 }

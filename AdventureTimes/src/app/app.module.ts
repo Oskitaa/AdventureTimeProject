@@ -24,6 +24,7 @@ import { EpisodeDetailsComponent } from './Components/episode-details/episode-de
     InicioComponent,
     PersonajesComponent,
     EpisodiosComponent,
+    EpisodeDetailsComponent,
     EscenariosComponent,
     TiendaComponent,
     EspacioGrumosoComponent,

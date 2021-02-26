@@ -1,25 +1,32 @@
-#tarjetas {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+#content {
+    width: 100vw;
+    background: fixed no-repeat center;
+    background-image: url('./../../../assets/images/fondo_tienda.jpg');
 
-    .tarjeta {
-        margin: 2em;
-        transition: transform .5s;
-        transition-timing-function: ease-out;
+
+    #tarjetas {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    
+        .tarjeta {
+            margin: 2em;
+            transition: transform .5s;
+            transition-timing-function: ease-out;
+        }
+    
+        .tarjeta:hover {
+            transform: translateY(-1em) scale(1.08, 1.08);
+        }
     }
-
-    .tarjeta:hover {
-        transform: translateY(-1em) scale(1.08, 1.08);
+    
+    #scb {
+        position: fixed;
+        top: 45%;
+        left: 32%;
+        padding: 2em;
+        background-color: hsl(210deg, 10%, 23%);
+        border: 2px solid hsl(210deg, 12%, 61%);
+        border-radius: 30px;
     }
-}
-
-#scb {
-    position: fixed;
-    top: 45%;
-    left: 32%;
-    padding: 2em;
-    background-color: hsl(210deg, 10%, 23%);
-    border: 2px solid hsl(210deg, 12%, 61%);
-    border-radius: 30px;
 }

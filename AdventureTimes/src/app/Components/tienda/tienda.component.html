@@ -9,7 +9,7 @@
         <app-tarjeta-tienda class="tarjeta" [title]="t6" [desc]="d6" [img]="img6" (activaCompra)="pow(t6)"></app-tarjeta-tienda>
     </section>
     <section>
-        <div id="scb" *ngIf="compraRealizada">
+        <div id="scb" class="col-sm-12 col-md-8" *ngIf="compraRealizada">
             <p>Compra de {{ seleccionado }} realizada con éxito.</p>
         </div>
     </section>

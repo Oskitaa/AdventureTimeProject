@@ -1,0 +1,28 @@
+<div class="arriba container">
+  <div class="episode" *ngFor="let item of episodes.episodes">
+    <div class="row">
+      <span class="episode_number" *ngIf="ancho >= 768"
+        ><strong>{{ item.episode_number }}</strong></span
+      >
+      <img
+        src="{{ urlimg }}{{ item.still_path }}"
+        alt="Portada de la temporada"
+        width="200px"
+        height="300px"
+        class="col-sm-4 col"
+      />
+      <h3 class="episode_name col-sm-4 col">{{ item.name }}</h3>
+    </div>
+    <span class="episode_overview col-sm-12 col-md-3" *ngIf="item.overview">
+      <p>{{ item.overview }}</p></span
+    >
+    <span class="episode_overview col-sm-12 col-md-3" *ngIf="!item.overview"
+      ><p>
+        BMO le da la oportunidad a su reflejo, con quién platica en el baño, de
+        estar un momento en el mundo real, pero el exterior es demasiado ante
+        los ojos del pequeño Football que no quiere volver al espejo
+      </p>
+      .</span
+    >
+  </div>
+</div>

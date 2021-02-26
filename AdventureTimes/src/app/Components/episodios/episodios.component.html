@@ -1,1 +1,41 @@
-<p>episodios works!</p>
+<body>
+  <ng-template #content>
+    <app-episode-details [idSeason]="idSeason"></app-episode-details>
+  </ng-template>
+
+  <div class="prueba">
+    <div class="dialog">
+      <div
+        class="container"
+        *ngFor="let item of seasons?.seasons; let i = index"
+      >
+        <div *ngIf="i != 0" class="temp">
+          <h3
+            (click)="mostrarModalInfo(content, item.season_number)"
+            class="routerLink col-sm-12 col-md-12"
+          >
+            {{ item.name }}
+          </h3>
+          <div class="row">
+            <img
+              src="{{ urlimg }}{{ item.poster_path }}"
+              alt="Portada de la temporada"
+              class="routerLink col-sm-12 col-md-4"
+              (click)="mostrarModalInfo(content, item.season_number)"
+            />
+            <span class="col-sm-12 col-md-8" *ngIf="item.overview">{{
+              item.overview
+            }}</span>
+            <span class="col-sm-12 col-md-8" *ngIf="!item.overview"
+              >La Segunda temporada de Adventure Time fue debutada el 11 de
+              octubre de 2010 y terminada el 9 de mayo de 2011 en Estados
+              Unidos, en latinoamérica debuto el 11 de septiembre de 2011 y
+              finalizada el 19 de marzo de 2012, esta temporada consistió de 26
+              segmentos (13 episodios) de 11 minutos de duración.</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

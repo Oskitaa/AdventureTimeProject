@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    outline: none;
+}
+
+
+.titulo img{
+    width: 50%;
+    height: 25%;
+    display: block;
+    margin: auto;
+}  
+
+.fondo{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../../assets/images/wallpaperflare.com_wallpaper.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+//BMO
+.bmo {
+    width: 12%;
+    height: 23%;
+    position: absolute;
+    left: 87%;
+    top: 55%;
+  }
+
+.bmo img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+@supports(object-fit: cover){
+    .bmo img{
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+}
+
+//JAKE
+.jake {
+    width: 20%;
+    height: 35%;
+    position: absolute;
+    left: 7%;
+    top: 60%;
+  }
+
+.jake img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+@supports(object-fit: cover){
+    .jake img{
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+}
+
+//FINN
+.finn {
+    width: 15%;
+    height: 30%;
+    position: absolute;
+    left: 58%;
+    top: 70%;
+  }
+
+.finn img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+@supports(object-fit: cover){
+    .finn img{
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+}

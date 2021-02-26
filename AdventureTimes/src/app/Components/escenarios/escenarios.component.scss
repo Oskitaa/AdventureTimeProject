@@ -1,0 +1,79 @@
+.scroll{
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    overflow: hidden;
+}
+div.animationCircle{
+    position: absolute;
+    opacity: 0;
+    border-radius: 50%;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+}
+section{
+        article{
+            width: 25vw;
+            height: 100vh;
+            transition: 1s;
+            white-space: nowrap;
+            overflow-x: hidden;
+            &:hover{
+                width: 100vw;
+            }
+            &:hover div.content h1{
+                display: block;
+                opacity: 1;
+            }
+            &:hover div.content a {
+                display: block;
+                opacity: 1;
+            }
+            div.content{
+                padding: 2em;
+                h1{
+                    color: white;
+                    display: none;
+                    opacity: 0;
+                }
+                a{
+                    color: white;
+                    display:none;
+                    opacity: 0;
+                }
+                
+            }
+        }
+        #reinoFuego{
+            background: url("/assets/imgs/reino_fuego/reino_fuego_intro.png");
+        }
+        #reinoChuche{
+            background: url('/assets/imgs/reino_chuche/reino_chuche_presentacion.jpg') no-repeat;
+            background-size: cover;
+            text-shadow: 1px 1px 8px black;
+
+        }
+        #reinoGrumoso{
+            background: url('/assets/imgs/espacio_grumoso/intro.jpg') no-repeat right;
+            background-size: cover;
+        }
+        #reinoHielo{
+            background: url('/assets/imgs/reino_hielo/reino_helado.jpg') no-repeat;
+            background-size: cover;
+            text-shadow: 1px 1px 8px black;
+        }
+}
+@media screen and(max-width: 600px){
+    section{
+        flex-direction: column-reverse;
+        article{
+            width: 100vw; 
+            height: 25vh;
+            &:hover{
+                height: 100vh;
+            }
+
+        }
+    }
+
+}

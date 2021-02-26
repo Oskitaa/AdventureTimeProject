@@ -1,0 +1,79 @@
+<section id="intro">
+    <article class="align-middle" style="width: 900px;">
+        <h1>Reino de hielo</h1>
+        <p>
+            El Reino Helado es un sitio en la Tierra de Ooo. Parece estar dividido en dos
+            zonas principales. La primera y la que más veces ha aparecido en la serie se compone de muchas montañas
+            puntiagudas de hielo y nieve en los picos que sobresalen de las nubes debido a su gran altura y en la
+            segunda zona hay colinas completamente nevadas donde se puede esquiar como hacen Finn y Jake en el episodio
+            piloto y "Prisioneros del Amor".
+        </p>
+        <p>
+            En la primera es donde se ubica el castillo del Rey Helado y es el hogar de
+            muchas criaturas del hielo como los pingüinos. El Reino Helado es visible desde la casa de Finn y Jake ya
+            que según el mapa oficial de Ooo este reino es vecino a las zonas claras donde se encuentra el Fuerte del
+            Árbol.
+        </p>
+    </article>
+</section>
+<section id="sectionUbicacion">
+    <article class="row">
+        <div class="d-flex flex-column col-sm-12 col-lg-7 justify-content-start">
+            <h2>Ubicacion</h2>
+            <p>
+                Se encuentra en el norte de Ooo al lado del Dulce Reino y al sur con las Tierras de Pasto.
+                <br>
+                Si ves la casa de Finn y Jake completa se puede ver al este el Reino Helado.
+            </p>
+            <div class="images row">
+                <img src="/assets/imgs/reino_hielo/reino_helado_ubicacion_1.png" class="col-5" alt="">
+                <img src="/assets/imgs/reino_hielo/reino_helado_ubicacion_2.png" class="col-5" alt="">
+            </div>
+        </div>
+        <div class="d-flex flex-column col-sm-12 col-lg-5 justify-content-end">
+            <h2 style="text-align:center;">Apariencia</h2>
+            <img src="/assets/imgs/reino_hielo/reino_helado_apariencia.png" class="banner_apariencia" alt="">
+            <p>
+                Es muy similar a un polo antártico solo que con montañas hechas de hielo y nieve, una montaña más grande
+                que las demás es el castillo del Rey Helado.
+            </p>
+
+        </div>
+    </article>
+</section>
+<section id="sectionCuriosidades" class="justify-content-center">
+    <article>
+        <h2 style="text-align: center;">Curiosidades</h2>
+        <ul>
+            <li>
+                En la gran mayoría de episodios que transcurren en las praderas, en alguna escena se ve el Reino Helado
+                de fondo, aunque esto suele ser irrelevante con la trama (a veces solo aparece por unos segundos, a modo
+                de cameo).
+            </li>
+            <li>
+                En diferentes episodios se ve que comparte fronteras con diferentes sitios como las tierras de pasto, el mar, y hasta con el Reino de Fuego.
+            </li>
+            <li>
+                Vista de lejos, la torre del Rey Helado parece un rostro.
+            </li>
+            <li>
+                Es uno de los primeros lugares que aparece en el corto de animación.
+            </li>
+            <li>
+                En el baño están las iniciales del Rey Helado pero en inglés; IK (Ice King).
+            </li>
+        </ul>
+    </article>
+</section>
+<section id="sectionGaleria">
+    <article>
+        <h1 style="text-align: center;">Galeria</h1>
+        <ngb-carousel #carousel [interval]="2000" id="carousel">
+            <ng-template ngbSlide *ngFor="let img of galleryImages; index as i">
+                <div id="imgGaleriaContainer" class="picsum-img-wrapper">
+                  <img [src]="img" style="width: 100%; height: 100%;" alt="My image {{i + 1}} description">
+                </div>
+            </ng-template>
+          </ngb-carousel>
+    </article>
+</section>

@@ -1,0 +1,81 @@
+<section id="intro">
+    <article class="align-middle" style="width: 900px;">
+        <h1>Reino de Fuego</h1>
+        <p>
+            El Reino del Fuego es el hogar de la mayoría de los Elementos de Fuego de
+            la Tierra de Ooo. Se compone de los volcanes, cráteres, torres que sueltan humo y mares de lava. Su Rey
+            Flama vive en el Palacio de Fuego, aunque él ya no es el rey, sino su hija, la anterior Princesa Flama, lo
+            es. El Reino del Fuego hizo su primera aparición oficial en "Gracias", y fue un lugar importante en
+            "Incendio" y "Punto de Ignición". La mayoría de sus habitantes se consideran malvados, incluido el Rey
+            Flama.
+            <br><br>
+            Aparece por primera vez en "¡Desalojo!" en un flashback donde se muestra a Marceline bailando en un
+            hula-hula en un mar de llamas. Es posible que el Conde de Fuego gobernó la tierra en el pasado, un flashback
+            en "Su Héroe" muestra lo que parece ser una corona en lo que parece ser el Reino del Fuego. La Princesa
+            Flama actualmente gobierna el Reino de Fuego.
+        </p>
+    </article>
+</section>
+<section id="sectionUbicacion">
+    <article class="row">
+        <div class="d-flex flex-column col-sm-12 col-lg-5 justify-content-start">
+            <h2 style="text-align: center;">Ubicacion</h2>
+            <p>
+                Se encuentra en el sector noroeste de la tierra de Ooo, al lado de este está el Reino Helado y al sur
+                están los Bosques de Algodón de Azúcar.
+            </p>
+        </div>
+        <div class="d-flex flex-column col-sm-12 col-lg-5">
+            <h2 style="text-align:center;">Apariencia</h2>
+            <p>
+                El Reino del Fuego está formado por pequeños volcanes como casas y un volcán gigante, que podría ser el
+                castillo donde vive la realeza. Está totalmente lleno de lava y magma de fuego además de tener ciertas
+                criaturas de fuego y fuentes de lava en el aire.
+            </p>
+        </div>
+    </article>
+   
+</section>
+<section id="sectionHabitantes" class="justify-content-center">
+    <article class="row align-items-center justify-content-end">
+        <div class="col-sm-12 col-md-12 col-xl-6 mb-5 habitantes" style="text-align: center;">
+            <h1 style="text-align: center;">Habitantes</h1>
+                <ul>
+                    <li (click)="changeCard(1)">Princesa Llama</li>
+                    <li (click)="changeCard(2)">Rey Llama</li>
+                    <li (click)="changeCard(3)">Conde de fuego</li>
+                    <li (click)="changeCard(4)">Flint</li>
+                    <li (click)="changeCard(5)">Hermanos menores de la princesa llama</li>
+                    <li (click)="changeCard(6)">Guardian de fuego</li>
+                    <li (click)="changeCard(7)">Bufón de fuego</li>
+                    <li (click)="changeCard(8)">Juglar Llama</li>
+                </ul>
+            </div>
+            <div class="cards col-sm-12 col-md-5 col-xl-4">
+                <div class="card" id="card_{{habitante.id}}" *ngFor="let habitante of habitantes" #card>
+                    <img src="{{habitante.image}}" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            {{habitante.title}}
+                        </h3>
+                        {{habitante.descripcion}}
+                    </div>
+                </div>
+            </div>
+    </article>
+
+</section>
+<section id="sectionGaleria">
+    <article>
+        <article>
+            <h1 style="text-align: center;">Galeria</h1>
+            <ngb-carousel #carousel [interval]="2000" id="carousel">
+                <ng-template ngbSlide *ngFor="let img of galleryImages; index as i">
+                    <div id="imgGaleriaContainer" class="picsum-img-wrapper">
+                      <img [src]="img" style="width: 100%; height: 100%;" alt="My image {{i + 1}} description">
+                    </div>
+                </ng-template>
+              </ngb-carousel>
+        </article>
+    </article>
+</section>

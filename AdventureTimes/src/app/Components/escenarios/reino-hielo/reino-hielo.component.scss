@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+section {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    height: 100vh;
+    padding: 2em;
+    height: 100vh;
+    padding: 1.5em;
+    color: white;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-shadow: 1px 1px black;
+    article{
+        width: 600px;
+        height: auto;
+        border-radius: 1rem;
+    }
+}
+
+#intro{
+    background: url('/assets/imgs/reino_hielo/reino_hielo_intro.jpg') no-repeat;
+    background-size: cover;
+}
+
+#sectionUbicacion{
+    background: url('/assets/imgs/reino_hielo/curiosidades.jpg') no-repeat;
+
+    background-size: cover;
+    background-attachment: scroll;
+    justify-content: space-around;
+    align-items: center;
+    article{
+        width: 90%;
+        div{
+            div.images{
+                justify-content: center;
+                img{
+                    width: 300px;
+                    height: 250px;
+                }
+            }
+        }
+        div.info_geo_1{
+            align-self: flex-start;
+        }
+        div.banner_apariencia{
+            img{
+                width: 350px;
+                height: 150px;
+            }
+        }
+    }
+}
+#sectionCuriosidades{
+    background: url('/assets/imgs/reino_hielo/reino_helado_curiosidades.jpg') no-repeat center;
+}
+
+#sectionGaleria{
+    background: url('/assets/imgs/reino_hielo/reino_helado_ubicacion.png') no-repeat;
+    justify-content: center;
+    align-items: flex-start;
+    article{
+        height: 50vh;
+        width: 50vw;
+    }
+}
+@media screen and(max-width: 600px){
+    section{
+        height: 100vmax;
+    }
+    #sectionUbicacion{
+        
+        article{
+            width: auto;
+            h2{
+                text-align: center;
+            }
+            .images{
+                justify-content: center;
+                img{
+                    width: 250px !important;
+                    height: 100px !important;
+                }
+            }
+            img.banner_apariencia{
+                width: 350px !important;
+                height: 100px !important;
+            }
+        }
+    }
+    #sectionGaleria{
+        align-items: center;
+        article{
+            width: 80vw;
+        }
+    }
+}

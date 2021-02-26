@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './Components/inicio/inicio.component';
@@ -10,11 +9,16 @@ import { PersonajesComponent } from './Components/personajes/personajes.componen
 import { EpisodiosComponent } from './Components/episodios/episodios.component';
 import { EscenariosComponent } from './Components/escenarios/escenarios.component';
 import { TiendaComponent } from './Components/tienda/tienda.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EspacioGrumosoComponent } from './Components/escenarios/espacio-grumoso/espacio-grumoso.component';
+import { ReinoHieloComponent } from './Components/escenarios/reino-hielo/reino-hielo.component';
+import { ReinoFuegoComponent } from './Components/escenarios/reino-fuego/reino-fuego.component';
+import { ReinoChucheComponent } from './Components/escenarios/reino-chuche/reino-chuche.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { EpisodeDetailsComponent } from './Components/episode-details/episode-details.component';
-
 
 @NgModule({
   declarations: [
@@ -24,16 +28,24 @@ import { EpisodeDetailsComponent } from './Components/episode-details/episode-de
     EpisodiosComponent,
     EscenariosComponent,
     TiendaComponent,
+    EspacioGrumosoComponent,
+    ReinoHieloComponent,
+    ReinoFuegoComponent,
+    ReinoChucheComponent,
+  ],
+  imports: [
     EpisodeDetailsComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     NgbModule,
     NgbPaginationModule, 
-    NgbAlertModule
+    NgbAlertModule,
+    EpisodeDetailsComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

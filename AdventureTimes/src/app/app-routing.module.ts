@@ -7,10 +7,9 @@ import { ReinoChucheComponent } from './Components/escenarios/reino-chuche/reino
 import { ReinoFuegoComponent } from './Components/escenarios/reino-fuego/reino-fuego.component';
 import { ReinoHieloComponent } from './Components/escenarios/reino-hielo/reino-hielo.component';
 import { InicioComponent } from './Components/inicio/inicio.component';
-import { EscenariosComponent } from './Components/escenarios/escenarios.component';
-import { InicioComponent } from './Components/inicio/inicio.component';
 import { TiendaComponent } from './Components/tienda/tienda.component';
 import { EpisodeDetailsComponent } from './Components/episode-details/episode-details.component';
+import { EpisodiosComponent } from './Components/episodios/episodios.component';
 
 const routes: Routes = [
     {

@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild, QueryList, Query} from '@angular/core';
 import {NgbCarousel, NgbSlide, NgbSlideEvent, NgbSlideEventSource} from '@ng-bootstrap/ng-bootstrap';
 import {gsap, TimelineLite, TweenMax} from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {circularMaskAnimation, slideInAnimation} from 'src/app/animations/router.animations';
 @Component({
   selector: 'app-escenarios',

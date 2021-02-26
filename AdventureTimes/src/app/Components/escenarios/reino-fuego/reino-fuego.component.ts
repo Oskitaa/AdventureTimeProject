@@ -122,8 +122,10 @@ export class ReinoFuegoComponent implements OnInit {
   sectionGaleriaAnimation(){
     let galleryTimeLine = new TimelineMax(this.getScrollTriggerConfig("#sectionGaleria article"))
     galleryTimeLine.fromTo("#sectionGaleria article h1",1,{
-      y: -200,
+      opacity: 0,
+      y: -100,
     },{
+      opacity: 1,
       y: 0
     }).fromTo("#sectionGaleria article #carousel",.5,{
       transform: "scale(0)"
@@ -146,7 +148,7 @@ export class ReinoFuegoComponent implements OnInit {
       }
       if(window.innerWidth < 1100 && this.habitanteSelected == 0){
         this.changeCardTimeLine.to("#sectionHabitantes",.5,{
-          height: "140vh",
+          height: "170vh",
         }).fromTo("#sectionHabitantes .habitantes",.5,{
           left: 0,
           transform: "translateY(0)",

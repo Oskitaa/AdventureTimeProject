@@ -65,8 +65,10 @@ goToEscenarios(){
 sectionGalleryAnimation(){
   let galleryTimeLine = new TimelineMax(this.getScrollTriggerConfig("#sectionGaleria article"))
   galleryTimeLine.fromTo("#sectionGaleria article h1",1,{
-    y: -200,
+    opacity: 0,
+    y: -100,
   },{
+    opacity: 1,
     y: 0
   }).fromTo("#sectionGaleria article #carousel",.5,{
     transform: "scale(0)"

@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +8,6 @@ import { PersonajesComponent } from './Components/personajes/personajes.componen
 import { EpisodiosComponent } from './Components/episodios/episodios.component';
 import { EscenariosComponent } from './Components/escenarios/escenarios.component';
 import { TiendaComponent } from './Components/tienda/tienda.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EspacioGrumosoComponent } from './Components/escenarios/espacio-grumoso/espacio-grumoso.component';
 import { ReinoHieloComponent } from './Components/escenarios/reino-hielo/reino-hielo.component';
@@ -34,9 +32,6 @@ import { EpisodeDetailsComponent } from './Components/episode-details/episode-de
     ReinoChucheComponent,
   ],
   imports: [
-    EpisodeDetailsComponent
-  ],
-  imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -45,7 +40,6 @@ import { EpisodeDetailsComponent } from './Components/episode-details/episode-de
     NgbModule,
     NgbPaginationModule, 
     NgbAlertModule,
-    EpisodeDetailsComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

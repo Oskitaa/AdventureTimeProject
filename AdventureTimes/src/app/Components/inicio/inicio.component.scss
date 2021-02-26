@@ -3,19 +3,6 @@
     padding: 0;
 }
 
-img {
-    outline: none;
-}
-
-
-.titulo {
-  img {
-    width: 50%;
-    height: 25%;
-    display: block;
-    margin: auto;
-  }  
-}
 
 
 .fondo{
@@ -24,123 +11,173 @@ img {
     background-image: url("../../../assets/images/wallpaperflare.com_wallpaper.jpg");
     background-size: cover;
     background-position: center;
-}
 
-//BMO
-.bmo {
-    width: 12%;
-    height: 23%;
-    position: absolute;
-    left: 87%;
-    top: 55%;
-  }
+    img {
+      outline: none;
+    }
 
-.bmo {
-  img {
-    width: 100%;
-    height: auto;
-    cursor: pointer;
-  }
-}
-
-@supports(object-fit: cover){
-  .bmo {
+    .titulo {
       img {
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
+        width: 50%;
+        height: 25%;
+        display: block;
+        margin: auto;
+      }  
     }
-  } 
-}
 
-//JAKE
-.jake {
-    width: 20%;
-    height: 35%;
-    position: absolute;
-    left: 7%;
-    top: 60%;
-  }
+    //BMO
+    .bmo {
+        width: 12%;
+        height: 23%;
+        position: absolute;
+        left: 87%;
+        top: 55%;
+      }
 
-.jake { 
-  img {
-    width: 100%;
-    height: auto;
-    cursor: pointer;
-  }
-}
-
-@supports(object-fit: cover){
-  .jake {
-    img {
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
+    .bmo {
+      img {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+      }
     }
-  }
-}
 
-//FINN
-.finn {
-    width: 15%;
-    height: 30%;
-    position: absolute;
-    left: 58%;
-    top: 70%;
-  }
-
-.finn {
-  img {
-    width: 100%;
-    height: auto;
-    cursor: pointer;
-  } 
-}
-
-@supports(object-fit: cover){
-  .finn {
-    img{
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
+    @supports(object-fit: cover){
+      .bmo {
+          img {
+          height: 100%;
+          object-fit: cover;
+          object-position: center center;
+        }
+      } 
     }
-  }   
-}
 
-//REY HIELO
-.hielo {
-  width: 8%;
-  height: 15%;
-  position: absolute;
-  left: 34%;
-  top: 65%;
-  transition: all 2s;
-  transition-timing: ease-in-out;
-}
+    //JAKE
+    .jake {
+        width: 20%;
+        height: 35%;
+        position: absolute;
+        left: 7%;
+        top: 60%;
+      }
 
-.hielo:hover {
-  width: 8%;
-  height: 15%;
-  position: absolute;
-  left: 34%;
-  top: 65%;
-  transform: translateX(-200px) translateY(-200px) rotate(360deg) translate3d(60px, 50%, 3em) scale3d(0.0, 0.0, 0.0);
-}
-
-.hielo { 
-  img {
-    width: 100%;
-    height: auto;
-    cursor: pointer;
-  }
-}
-
-@supports(object-fit: cover){
-.hielo {
-    img {
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
+    .jake { 
+      img {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+      }
     }
-  }
+
+    @supports(object-fit: cover){
+      .jake {
+        img {
+          height: 100%;
+          object-fit: cover;
+          object-position: center center;
+        }
+      }
+    }
+
+    //FINN
+    .finn {
+        width: 15%;
+        height: 30%;
+        position: absolute;
+        left: 58%;
+        top: 70%;
+      }
+
+    .finn {
+      img {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+      } 
+    }
+
+    @supports(object-fit: cover){
+      .finn {
+        img{
+          height: 100%;
+          object-fit: cover;
+          object-position: center center;
+        }
+      }   
+    }
+
+    //REY HIELO
+    .hielo {
+      width: 8%;
+      height: 15%;
+      position: absolute;
+      left: 34%;
+      top: 65%;
+      transition: all 2s;
+      transition-timing: ease-in-out;
+    }
+
+    .hielo:hover {
+      width: 8%;
+      height: 15%;
+      position: absolute;
+      left: 34%;
+      top: 65%;
+      transform: translateX(-200px) translateY(-200px) rotate(360deg) translate3d(60px, 50%, 3em) scale3d(0.0, 0.0, 0.0);
+    }
+
+    .hielo { 
+      img {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+      }
+    }
+
+    @supports(object-fit: cover){
+      .hielo {
+        img {
+          height: 100%;
+          object-fit: cover;
+          object-position: center center;
+        }
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .jake {
+        width: 180px;
+        height: 180px;
+        left: 30px;
+        top: 560px;
+      }
+
+      .hielo {
+        width: 90px;
+        height: 90px;
+        left: 215px;
+        top: 355px;
+      }
+
+      .finn {
+        width: 220px;
+        height: 220px;
+        left: 150px;
+        top: 630px;
+      }
+
+      .bmo {
+        width: 80px;
+        height: 80px;
+        left: 290px;
+        top: 580px;
+      }
+    }
 }
+
+
+
+
+
+
+

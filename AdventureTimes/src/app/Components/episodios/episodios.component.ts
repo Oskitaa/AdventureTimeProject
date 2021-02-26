@@ -9,18 +9,18 @@ import { environment } from 'src/environments/environment';
 })
 export class EpisodiosComponent implements OnInit {
 
-  public seasons;
-  public urlimg = environment.urlImg;
+  /*public seasons;
+  public urlimg = environment.urlImg;*/
 
-  constructor(private peti : PajaxService) { }
+  constructor() { }
 
   ngOnInit(): void {
 
-    this.peti.getSeassons().subscribe(d => {
+    /*this.peti.getSeassons().subscribe(d => {
       
       console.log(d);
       this.seasons = d?.seasons;
-    });
+    });*/
 
   }
 
